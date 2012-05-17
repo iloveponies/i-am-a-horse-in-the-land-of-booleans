@@ -23,15 +23,15 @@
   (second-elements [[1 2] [2 3] [3 4]])               => [2 3 4]
   (second-elements [[1 2 3 4] [1] ["a" "s" "d" "f"]]) => [2 nil "s"])
 
-(def cities {:title "The City and the City"
-             :author {:name "China Miéville", :birth-year 1972}})
-(def wild-seed {:title "Wild Seed",
-                :author {:name "Octavia E. Butler"
-                         :birth-year 1947
-                         :death-year 2006}})
-(def embassytown {:title "Embassytown",
-                  :author {:name "China Miéville",
-                           :birth-year 1972}})
+(def china {:name "China Miéville", :birth-year 1972})
+
+(def octavia {:name "Octavia E. Butler"
+              :birth-year 1947
+              :death-year 2006})
+
+(def cities {:title "The City and the City" :author china})
+(def wild-seed {:title "Wild Seed", :author octavia})
+(def embassytown {:title "Embassytown", :author china})
 
 (def books [cities, wild-seed, embassytown])
 
@@ -40,12 +40,7 @@
   (titles books)    => ["The City and the City" "Wild Seed" "Embassytown"])
 
 (facts "books-by-author"
-  (books-by-author "China Miéville" books)
-       => [{:title "The City and the City"
-            :author {:name "China Miéville", :birth-year 1972}}
-           {:title "Embassytown",
-            :author {:name "China Miéville",
-                     :birth-year 1972}}])
+  (books-by-author "China Miéville" books) => [cities, embassytown])
 
 (facts "book-titles-by-author"
   (book-titles-by-author "China Miéville" books)
@@ -54,8 +49,7 @@
     => ["Wild Seed"])
 
 (facts "author-names"
-  (author-names [{:name "China Miéville", :birth-year 1972}
-                 {:name "Octavia E. Butler"
-                  :birth-year 1947
-                  :death-year 2006}])
-    => #{"Octavia E. Butler" "China Miéville"})
+  (author-names [china octavia]) => #{"Octavia E. Butler" "China Miéville"})
+
+(facts "authors"
+  (authors books) => #{china octavia})
