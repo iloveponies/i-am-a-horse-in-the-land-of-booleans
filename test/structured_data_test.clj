@@ -10,3 +10,7 @@
 (facts "spiff"
   (spiff [1 2 3])         => 4
   (spiff [1 2 -34 4 5 6]) => -33)
+
+(facts "spiff-destructuring"
+  (spiff-destructuring [1 2 3])         => 4
+  (spiff-destructuring [1 2 -34 4 5 6]) => -33)

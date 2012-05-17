@@ -6,4 +6,7 @@
 (defn spiff [v]
   :-)
 
+(defn spiff-destructuring [v]
+  :-)
+
 ; %________%
