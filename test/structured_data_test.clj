@@ -58,4 +58,4 @@
                  {:name "Octavia E. Butler"
                   :birth-year 1947
                   :death-year 2006}])
-    => ["Octavia E. Butler" "China Miéville"])
+    => #{"Octavia E. Butler" "China Miéville"})
