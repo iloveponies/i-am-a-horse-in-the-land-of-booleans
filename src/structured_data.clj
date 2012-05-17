@@ -15,4 +15,7 @@
 (defn second-elements [collection]
   :-)
 
+(defn titles [books]
+  :-)
+
 ; %________%

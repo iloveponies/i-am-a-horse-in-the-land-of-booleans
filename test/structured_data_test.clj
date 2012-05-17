@@ -23,3 +23,19 @@
   (second-elements [[1 2] [2 3] [3 4]])               => [2 3 4]
   (second-elements [[1 2 3 4] [1] ["a" "s" "d" "f"]]) => [2 nil "s"])
 
+(def cities {:title "The City and the City"
+             :author {:name "China Miéville", :birth-year 1972}})
+(def wild-seed {:title "Wild Seed",
+                :author {:name "Octavia E. Butler"
+                         :birth-year 1947
+                         :death-year 2006}})
+(def embassytown {:title "Embassytown",
+                  :author {:name "China Miéville",
+                           :birth-year 1972}})
+
+(def books [cities, wild-seed, embassytown])
+
+(facts "titles"
+  (titles [cities]) => ["The City and the City"]
+  (titles books)    => ["The City and the City" "Wild Seed" "Embassytown"])
+
