@@ -39,3 +39,5 @@
   (titles [cities]) => ["The City and the City"]
   (titles books)    => ["The City and the City" "Wild Seed" "Embassytown"])
 
+(facts "books-by-author"
+  (books-by-author "China Miéville") => ["The City and the City" "Embassytown"])
