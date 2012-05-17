@@ -12,4 +12,7 @@
 (defn element-lengths [collection]
   :-)
 
+(defn second-elements [collection]
+  :-)
+
 ; %________%
