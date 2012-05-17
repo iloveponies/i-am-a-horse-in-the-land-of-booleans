@@ -53,3 +53,8 @@
 
 (facts "authors"
   (authors books) => #{china octavia})
+
+(facts "books->author-names"
+  (books->author-names books) => #{"Octavia E. Butler" "China Miéville"})
+
+; %____%
