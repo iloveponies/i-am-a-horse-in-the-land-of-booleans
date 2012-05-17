@@ -9,4 +9,7 @@
 (defn spiff-destructuring [v]
   :-)
 
+(defn element-lengths [collection]
+  :-)
+
 ; %________%

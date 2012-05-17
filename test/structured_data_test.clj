@@ -14,3 +14,7 @@
 (facts "spiff-destructuring"
   (spiff-destructuring [1 2 3])         => 4
   (spiff-destructuring [1 2 -34 4 5 6]) => -33)
+
+(facts "element-lengths"
+  (element-lengths ["foo" "bar" "" "quux"])  => [3 3 0 4]
+  (element-lengths ["x" [:a :b :c] {:y 42}]) => [1 3 1])
