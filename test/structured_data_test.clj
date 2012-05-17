@@ -46,3 +46,9 @@
            {:title "Embassytown",
             :author {:name "China Miéville",
                      :birth-year 1972}}])
+
+(facts "book-titles-by-author"
+  (book-titles-by-author "China Miéville" books)
+    => ["The City and the City" "Embassytown"]
+  (book-titles-by-author "Octavia E. Butler" books)
+    => ["Wild Seed"])
