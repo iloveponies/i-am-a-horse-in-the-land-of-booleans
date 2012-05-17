@@ -52,3 +52,10 @@
     => ["The City and the City" "Embassytown"]
   (book-titles-by-author "Octavia E. Butler" books)
     => ["Wild Seed"])
+
+(facts "author-names"
+  (author-names [{:name "China Miéville", :birth-year 1972}
+                 {:name "Octavia E. Butler"
+                  :birth-year 1947
+                  :death-year 2006}])
+    => ["Octavia E. Butler" "China Miéville"])
