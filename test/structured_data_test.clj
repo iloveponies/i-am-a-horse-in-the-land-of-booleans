@@ -40,4 +40,9 @@
   (titles books)    => ["The City and the City" "Wild Seed" "Embassytown"])
 
 (facts "books-by-author"
-  (books-by-author "China Miéville") => ["The City and the City" "Embassytown"])
+  (books-by-author "China Miéville" books)
+       => [{:title "The City and the City"
+            :author {:name "China Miéville", :birth-year 1972}}
+           {:title "Embassytown",
+            :author {:name "China Miéville",
+                     :birth-year 1972}}])
