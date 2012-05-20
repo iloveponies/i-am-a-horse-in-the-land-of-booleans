@@ -17,4 +17,5 @@
   (teen? 15) => true
   (teen? 13) => true
   (teen? 19) => true
+  (teen? 20) => false
   (teen? 27) => false)
