@@ -1,6 +1,6 @@
 (ns i-am-a-horse-in-the-land-of-booleans-test
-  (:use [i-am-a-horse-in-the-land-of-booleans-test
-         midje.sweet]))
+  (:use i-am-a-horse-in-the-land-of-booleans
+        midje.sweet))
 
 (facts "abs"
   (abs -2) => 2
