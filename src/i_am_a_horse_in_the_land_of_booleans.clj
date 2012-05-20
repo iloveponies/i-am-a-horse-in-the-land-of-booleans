@@ -6,5 +6,8 @@
 (defn abs [x]
   ":(")
 
+(defn teen? [age]
+  ":(")
+
 
 ; '_______'
