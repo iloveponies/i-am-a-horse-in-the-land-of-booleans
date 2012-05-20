@@ -25,4 +25,4 @@
   (not-teen? 25) => true
   (not-teen? 12) => true
   (not-teen? 19) => false
-  (not-teen? 20) => false)
+  (not-teen? 20) => true)
