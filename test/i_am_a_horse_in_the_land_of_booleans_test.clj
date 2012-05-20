@@ -19,3 +19,10 @@
   (teen? 19) => true
   (teen? 20) => false
   (teen? 27) => false)
+
+(facts "not-teen?"
+  (not-teen? 13) => false
+  (not-teen? 25) => true
+  (not-teen? 12) => true
+  (not-teen? 19) => false
+  (not-teen? 20) => false)

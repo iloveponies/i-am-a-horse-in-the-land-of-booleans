@@ -9,5 +9,7 @@
 (defn teen? [age]
   ":(")
 
+(defn not-teen? [age]
+  ":(")
 
 ; '_______'
