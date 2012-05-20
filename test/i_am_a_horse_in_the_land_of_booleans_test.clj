@@ -7,6 +7,7 @@
   (abs 42) => 42)
 
 (facts "fizzbuzz"
+  (fizzbuzz 2) => ""
   (fizzbuzz 45) => "gotcha!"
   (fizzbuzz 48) => "fizz"
   (fizzbuzz 70) => "buzz")
