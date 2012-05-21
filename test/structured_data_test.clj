@@ -23,6 +23,10 @@
   (second-elements [[1 2] [2 3] [3 4]])               => [2 3 4]
   (second-elements [[1 2 3 4] [1] ["a" "s" "d" "f"]]) => [2 nil "s"])
 
+(facts "toggle"
+  (toggle #{:a :b :c} :d) => #{:a :b :c :d}
+  (toggle #{:a :b :c} :a) => #{:b :c})
+
 (def china {:name "China Miéville", :birth-year 1972})
 
 (def octavia {:name "Octavia E. Butler"
