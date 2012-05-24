@@ -26,3 +26,11 @@
   (not-teen? 12) => true
   (not-teen? 19) => false
   (not-teen? 20) => true)
+
+(facts "generic-doublificate"
+  (generic-doublificate 1)        => 2
+  (generic-doublificate [1 2])    => [2 4]
+  (generic-doublificate '(65 21)) => [130 42]
+  (generic-doublificate {})       => nil
+  (generic-doublificate [])       => nil
+  (generic-doublificate {:a 1})   => true)

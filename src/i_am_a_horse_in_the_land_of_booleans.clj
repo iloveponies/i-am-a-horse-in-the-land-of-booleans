@@ -12,4 +12,7 @@
 (defn not-teen? [age]
   ":(")
 
+(defn generic-doublificate [x]
+  ":(")
+
 ; '_______'
