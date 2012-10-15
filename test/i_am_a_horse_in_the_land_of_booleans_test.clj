@@ -2,9 +2,22 @@
   (:use i-am-a-horse-in-the-land-of-booleans
         midje.sweet))
 
+(facts "my-boolean"
+       (my-boolean "foo") => true
+       (my-boolean nil) => false
+       (my-boolean (+ 2 3)) => true
+       (my-boolean true) => true
+       (my-boolean false) => false)
+
 (facts "abs"
   (abs -2) => 2
   (abs 42) => 42)
+
+(facts "divides?"
+       (divides? 2 4) => true
+       (divides? 4 2) => false
+       (divides? 5 10) => true
+       (divides? 2 5) => false)
 
 (facts "fizzbuzz"
   (fizzbuzz 2) => ""

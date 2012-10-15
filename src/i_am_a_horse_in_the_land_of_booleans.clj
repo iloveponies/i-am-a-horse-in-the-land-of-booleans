@@ -1,9 +1,15 @@
 (ns i-am-a-horse-in-the-land-of-booleans)
 
-(defn fizzbuzz [n]
+(defn my-boolean [x]
   ":(")
 
 (defn abs [x]
+  ":(")
+
+(defn divides? [divisor n]
+  ":(")
+
+(defn fizzbuzz [n]
   ":(")
 
 (defn teen? [age]
