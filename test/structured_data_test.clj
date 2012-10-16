@@ -16,6 +16,36 @@
   (cutify [1 2 3])   => [1 2 3 "<3"]
   (cutify ["a" "b"]) => ["a" "b" "<3"])
 
+(facts "height"
+  (height (rectangle [1 1] [5 1]))  => 4
+  (height (rectangle [1 1] [1 1]))  => 0
+  (height (rectangle [3 1] [10 4])) => 7)
+
+(facts "width"
+  (width (rectangle [1 1] [5 1])) => 0
+  (width (rectangle [1 1] [5 5])) => 4
+  (width (rectangle [0 0] [2 3])) => 3)
+
+(facts "area"
+  (area (rectangle [1 1] [5 1]))  => 0
+  (area (rectangle [0 0] [1 1]))  => 1
+  (area (rectangle [0 0] [4 3]))  => 12
+  (area (rectangle [3 1] [10 4])) => 21)
+
+(facts "contains-point?"
+  (contains-point? (rectangle [0 0] [2 2])
+                   (point 1 1))            => true
+  (contains-point? (rectangle [0 0] [2 2])
+                   (point 2 1))            => true
+  (contains-point? (rectangle [0 0] [2 2])
+                   (point -3 1))           => false
+  (contains-point? (rectangle [0 0] [2 2])
+                   (point 1 3))            => false
+  (contains-point? (rectangle [1 1] [2 2])
+                   (point 1 1))            => true
+  (contains-point? (rectangle [1 1] [1 1])
+                   (point 1 1))            => true)
+
 (facts "spiff-destructuring"
   (spiff-destructuring [1 2 3])         => 4
   (spiff-destructuring [1 2 -34 4 5 6]) => -33)

@@ -12,6 +12,12 @@
 (defn spiff-destructuring [v]
   :-)
 
+(defn point [x y]
+  [x y])
+
+(defn rectangle [bottom-left top-right]
+  [bottom-left top-right])
+
 (defn element-lengths [collection]
   :-)
 
