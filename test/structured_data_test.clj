@@ -46,6 +46,16 @@
   (contains-point? (rectangle [1 1] [1 1])
                    (point 1 1))            => true)
 
+(facts "contains-rectangle?"
+  (contains-rectangle? (rectangle [0 0] [3 3])
+                       (rectangle [1 1] [2 2])) => true
+  (contains-rectangle? (rectangle [0 0] [2 2])
+                       (rectangle [1 1] [3 3])) => false
+  (contains-rectangle? (rectangle [0 0] [1 1])
+                       (rectangle [0 0] [1 1])) => true
+  (contains-rectangle? (rectangle [0 0] [1 1])
+                       (rectangle [1 1] [2 2])) => false)
+
 (facts "spiff-destructuring"
   (spiff-destructuring [1 2 3])         => 4
   (spiff-destructuring [1 2 -34 4 5 6]) => -33)

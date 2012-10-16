@@ -18,6 +18,21 @@
 (defn rectangle [bottom-left top-right]
   [bottom-left top-right])
 
+(defn width [rectangle]
+  :-)
+
+(defn height [rectangle]
+  :-)
+
+(defn area [rectangle]
+  :-)
+
+(defn contains-point? [rectangle point]
+  :-)
+
+(defn contains-rectangle? [outer inner]
+  :-)
+
 (defn element-lengths [collection]
   :-)
 
