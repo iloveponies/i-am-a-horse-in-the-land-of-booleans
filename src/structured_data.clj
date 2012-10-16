@@ -6,6 +6,9 @@
 (defn spiff [v]
   :-)
 
+(defn cutify [v]
+  :-)
+
 (defn spiff-destructuring [v]
   :-)
 
