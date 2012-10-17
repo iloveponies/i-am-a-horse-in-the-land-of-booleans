@@ -26,6 +26,13 @@
   (height (rectangle [1 1] [5 5])) => 4
   (height (rectangle [0 0] [2 3])) => 3)
 
+(facts "square?"
+  (square? (rectangle [1 1] [2 2])) => true
+  (square? (rectangle [1 1] [2 3])) => false
+  (square? (rectangle [1 1] [1 1])) => true
+  (square? (rectangle [3 2] [1 0])) => true
+  (square? (rectangle [3 2] [1 1])) => false)
+
 (facts "area"
   (area (rectangle [1 1] [5 1]))  => 0
   (area (rectangle [0 0] [1 1]))  => 1
