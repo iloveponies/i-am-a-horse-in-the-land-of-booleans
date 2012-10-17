@@ -4,7 +4,7 @@
   ":(")
 
 (defn abs [x]
-  ":(")
+  -x)
 
 (defn divides? [divisor n]
   ":(")
