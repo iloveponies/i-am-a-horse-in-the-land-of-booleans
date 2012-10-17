@@ -16,6 +16,10 @@
   (cutify [1 2 3])   => [1 2 3 "<3"]
   (cutify ["a" "b"]) => ["a" "b" "<3"])
 
+(facts "spiff-destructuring"
+  (spiff-destructuring [1 2 3])         => 4
+  (spiff-destructuring [1 2 -34 4 5 6]) => -33)
+
 (facts "width"
   (width (rectangle [1 1] [5 1]))  => 4
   (width (rectangle [1 1] [1 1]))  => 0
@@ -63,9 +67,43 @@
   (contains-rectangle? (rectangle [0 0] [1 1])
                        (rectangle [1 1] [2 2])) => false)
 
-(facts "spiff-destructuring"
-  (spiff-destructuring [1 2 3])         => 4
-  (spiff-destructuring [1 2 -34 4 5 6]) => -33)
+(def china {:name "China Miéville", :birth-year 1972})
+(def octavia {:name "Octavia E. Butler"
+              :birth-year 1947
+              :death-year 2006})
+(def friedman {:name "Daniel Friedman" :birth-year 1944})
+(def felleisen {:name "Matthias Felleisen"})
+
+(def cities {:title "The City and the City" :authors [china]})
+(def wild-seed {:title "Wild Seed", :authors [octavia]})
+(def embassytown {:title "Embassytown", :authors [china]})
+(def little-schemer {:title "The Little Schemer"
+                     :authors [friedman, felleisen]})
+
+(def books [cities, wild-seed, embassytown, little-schemer])
+
+(facts "title-length"
+  (title-length cities)         => 21
+  (title-length wild-seed)      => 9
+  (title-length little-schemer) => 18)
+
+(facts "author-count"
+  (author-count cities)         => 1
+  (author-count wild-seed)      => 1
+  (author-count little-schemer) => 2)
+
+(facts "add-author"
+  (add-author little-schemer {:name "Gerald J. Sussman"})
+    => {:title "The Little Schemer"
+        :authors [{:birth-year 1944, :name "Daniel Friedman"}
+                  {:name "Matthias Felleisen"}
+                  {:name "Gerald J. Sussman"}]}
+  (add-author {:authors [{:name "Juhana"}]} {:name "Jani"})
+    => {:authors [{:name "Juhana"} {:name "Jani"}]})
+
+(facts "alive?"
+  (alive? china)   => true
+  (alive? octavia) => false)
 
 (facts "element-lengths"
   (element-lengths ["foo" "bar" "" "quux"])  => [3 3 0 4]
@@ -75,25 +113,25 @@
   (second-elements [[1 2] [2 3] [3 4]])               => [2 3 4]
   (second-elements [[1 2 3 4] [1] ["a" "s" "d" "f"]]) => [2 nil "s"])
 
-(facts "toggle"
-  (toggle #{:a :b :c} :d) => #{:a :b :c :d}
-  (toggle #{:a :b :c} :a) => #{:b :c})
-
-(def china {:name "China Miéville", :birth-year 1972})
-
-(def octavia {:name "Octavia E. Butler"
-              :birth-year 1947
-              :death-year 2006})
-
-(def cities {:title "The City and the City" :author china})
-(def wild-seed {:title "Wild Seed", :author octavia})
-(def embassytown {:title "Embassytown", :author china})
-
-(def books [cities, wild-seed, embassytown])
-
 (facts "titles"
   (titles [cities]) => ["The City and the City"]
   (titles books)    => ["The City and the City" "Wild Seed" "Embassytown"])
+
+(facts "monotonic?"
+  (monotonic? [1 2 3])     => true
+  (monotonic? [0 1 10 11]) => true
+  (monotonic? [3 2 0 -3])  => true
+  (monotonic? [3 2 2])     => true
+  (monotonic? [1 2 1 0])   => false)
+
+(facts "stars"
+  (stars 1) => "*"
+  (stars 7) => "*******"
+  (stars 3) => "***")
+
+(facts "toggle"
+  (toggle #{:a :b :c} :d) => #{:a :b :c :d}
+  (toggle #{:a :b :c} :a) => #{:b :c})
 
 (facts "books-by-author"
   (books-by-author "China Miéville" books) => [cities, embassytown])

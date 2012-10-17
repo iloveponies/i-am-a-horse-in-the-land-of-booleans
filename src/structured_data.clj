@@ -36,6 +36,18 @@
 (defn contains-rectangle? [outer inner]
   :-)
 
+(defn title-length [book]
+  :-)
+
+(defn author-count [book]
+  :-)
+
+(defn add-author [book new-author]
+  :-)
+
+(defn alive? [author]
+  :-)
+
 (defn element-lengths [collection]
   :-)
 
@@ -43,6 +55,12 @@
   :-)
 
 (defn titles [books]
+  :-)
+
+(defn monotonic? [a-seq]
+  :-)
+
+(defn stars [n]
   :-)
 
 (defn books-by-author [author books]
