@@ -24,7 +24,7 @@
 (defn height [rectangle]
   :-)
 
-(defn square [rectangle]
+(defn square? [rectangle]
   :-)
 
 (defn area [rectangle]
