@@ -133,6 +133,34 @@
   (toggle #{:a :b :c} :d) => #{:a :b :c :d}
   (toggle #{:a :b :c} :a) => #{:b :c})
 
+(facts "contains-duplicates?"
+  (contains-duplicates? [1 1 2 3 -40])   => true
+  (contains-duplicates? [1 2 3 -40])     => false
+  (contains-duplicates? [1 2 3 "a" "a"]) => true)
+
+(facts "author->string"
+  (author->string felleisen) => "Matthias Felleisen"
+  (author->string friedman)  => "Daniel Friedman (1944 - )"
+  (author->string octavia)   => "Octavia E. Butler (1947 - 2006)")
+
+(facts "authors->string"
+  (authors->string (:authors little-schemer)) => "Daniel Friedman (1944 - ), Matthias Felleisen"
+  (authors->string [octavia])                 => "Octavia E. Butler (1947 - 2006)"
+  (authors->string [])                        => ""
+  (authors->string [octavia, friedman])       => "Octavia E. Butler (1947 - 2006), Daniel Friedman (1944 - )")
+
+(facts "book->string"
+  (book->string wild-seed) => "Wild Seed, written by Octavia E. Butler"
+  (book->string little-schemer)
+    => "The Little Schemer, written by Daniel Friedman (1944 - ), Matthias Felleisen")
+
+(facts "books->string"
+  (books->string []) => "No books."
+  (books->string [cities])
+    => "1 book. The City and the City, written by China Miéville (1972 - )."
+  (books->string [little-schemer, cities, wild-seed])
+    => "3 books. The Little Schemer, written by Daniel Friedman (1944 - ), Matthias Felleisen. The City and the City, written by China Miéville (1972 - ). Wild Seed, written by Octavia E. Butler (1947 - 2006).")
+
 (facts "books-by-author"
   (books-by-author "China Miéville" books) => [cities, embassytown])
 

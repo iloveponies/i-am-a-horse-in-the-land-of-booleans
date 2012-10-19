@@ -63,6 +63,24 @@
 (defn stars [n]
   :-)
 
+(defn toggle [a-set elem]
+  :-)
+
+(defn contains-duplicates? [a-seq]
+  :-)
+
+(defn author->string [author]
+  :-)
+
+(defn authors->string [authors]
+  :-)
+
+(defn book->string [book]
+  :-)
+
+(defn books->string [books]
+  :-)
+
 (defn books-by-author [author books]
   :-)
 
@@ -76,9 +94,6 @@
   :-)
 
 (defn books->author-names [books]
-  :-)
-
-(defn toggle [a-set elem]
   :-)
 
 ; %________%
