@@ -69,6 +69,18 @@
 (defn contains-duplicates? [a-seq]
   :-)
 
+(defn old-book->new-book [book]
+  :-)
+
+(defn has-author? [book author]
+  :-)
+
+(defn authors [books]
+  :-)
+
+(defn all-author-names [books]
+  :-)
+
 (defn author->string [author]
   :-)
 

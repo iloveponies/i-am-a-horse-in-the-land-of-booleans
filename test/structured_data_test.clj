@@ -82,40 +82,53 @@
 
 (def books [cities, wild-seed, embassytown, little-schemer])
 
-(facts "title-length"
-  (title-length cities)         => 21
-  (title-length wild-seed)      => 9
-  (title-length little-schemer) => 18)
+(let [china {:name "China Miéville", :birth-year 1972}
+      octavia {:name "Octavia E. Butler"
+               :birth-year 1947
+               :death-year 2006}
+      friedman {:name "Daniel Friedman" :birth-year 1944}
+      felleisen {:name "Matthias Felleisen"}
+      cities {:title "The City and the City" :authors [china]}
+      wild-seed {:title "Wild Seed", :authors [octavia]}
+      embassytown {:title "Embassytown", :authors [china]}
+      little-schemer {:title "The Little Schemer"
+                      :authors [friedman, felleisen]}
+      books [cities, wild-seed, embassytown, little-schemer]]
 
-(facts "author-count"
-  (author-count cities)         => 1
-  (author-count wild-seed)      => 1
-  (author-count little-schemer) => 2)
-
-(facts "add-author"
-  (add-author little-schemer {:name "Gerald J. Sussman"})
-    => {:title "The Little Schemer"
-        :authors [{:birth-year 1944, :name "Daniel Friedman"}
-                  {:name "Matthias Felleisen"}
-                  {:name "Gerald J. Sussman"}]}
-  (add-author {:authors [{:name "Juhana"}]} {:name "Jani"})
-    => {:authors [{:name "Juhana"} {:name "Jani"}]})
-
-(facts "alive?"
-  (alive? china)   => true
-  (alive? octavia) => false)
-
-(facts "element-lengths"
-  (element-lengths ["foo" "bar" "" "quux"])  => [3 3 0 4]
-  (element-lengths ["x" [:a :b :c] {:y 42}]) => [1 3 1])
-
-(facts "second-elements"
-  (second-elements [[1 2] [2 3] [3 4]])               => [2 3 4]
-  (second-elements [[1 2 3 4] [1] ["a" "s" "d" "f"]]) => [2 nil "s"])
-
-(facts "titles"
-  (titles [cities]) => ["The City and the City"]
-  (titles books)    => ["The City and the City" "Wild Seed" "Embassytown"])
+  (facts "title-length"
+    (title-length cities)         => 21
+    (title-length wild-seed)      => 9
+    (title-length little-schemer) => 18)
+  
+  (facts "author-count"
+    (author-count cities)         => 1
+    (author-count wild-seed)      => 1
+    (author-count little-schemer) => 2)
+  
+  (facts "add-author"
+    (add-author little-schemer {:name "Gerald J. Sussman"})
+      => {:title "The Little Schemer"
+          :authors [{:birth-year 1944, :name "Daniel Friedman"}
+                    {:name "Matthias Felleisen"}
+                    {:name "Gerald J. Sussman"}]}
+    (add-author {:authors [{:name "Juhana"}]} {:name "Jani"})
+      => {:authors [{:name "Juhana"} {:name "Jani"}]})
+  
+  (facts "alive?"
+    (alive? china)   => true
+    (alive? octavia) => false)
+  
+  (facts "element-lengths"
+    (element-lengths ["foo" "bar" "" "quux"])  => [3 3 0 4]
+    (element-lengths ["x" [:a :b :c] {:y 42}]) => [1 3 1])
+  
+  (facts "second-elements"
+    (second-elements [[1 2] [2 3] [3 4]])               => [2 3 4]
+    (second-elements [[1 2 3 4] [1] ["a" "s" "d" "f"]]) => [2 nil "s"])
+  
+  (facts "titles"
+    (titles [cities]) => ["The City and the City"]
+    (titles books)    => ["The City and the City" "Wild Seed" "Embassytown"]))
 
 (facts "monotonic?"
   (monotonic? [1 2 3])     => true
@@ -138,45 +151,94 @@
   (contains-duplicates? [1 2 3 -40])     => false
   (contains-duplicates? [1 2 3 "a" "a"]) => true)
 
-(facts "author->string"
-  (author->string felleisen) => "Matthias Felleisen"
-  (author->string friedman)  => "Daniel Friedman (1944 - )"
-  (author->string octavia)   => "Octavia E. Butler (1947 - 2006)")
+(facts "old-book->new-book"
+  (old-book->new-book {:title "The Little Schemer"
+                       :authors [friedman, felleisen]})
+    => {:title "The Little Schemer" :authors #{friedman, felleisen}}
+  (old-book->new-book {:title "Wild Seed", :authors [octavia]})
+    => {:title "Wild Seed", :authors #{octavia}})
 
-(facts "authors->string"
-  (authors->string (:authors little-schemer)) => "Daniel Friedman (1944 - ), Matthias Felleisen"
-  (authors->string [octavia])                 => "Octavia E. Butler (1947 - 2006)"
-  (authors->string [])                        => ""
-  (authors->string [octavia, friedman])       => "Octavia E. Butler (1947 - 2006), Daniel Friedman (1944 - )")
 
-(facts "book->string"
-  (book->string wild-seed) => "Wild Seed, written by Octavia E. Butler"
-  (book->string little-schemer)
-    => "The Little Schemer, written by Daniel Friedman (1944 - ), Matthias Felleisen")
+(let [china {:name "China Miéville", :birth-year 1972}
+      octavia {:name "Octavia E. Butler"
+               :birth-year 1947
+               :death-year 2006}
+      friedman {:name "Daniel Friedman" :birth-year 1944}
+      felleisen {:name "Matthias Felleisen"}
+      cities {:title "The City and the City" :authors #{china}}
+      wild-seed {:title "Wild Seed", :authors #{octavia}}
+      embassytown {:title "Embassytown", :authors #{china}}
+      little-schemer {:title "The Little Schemer"
+                     :authors #{friedman, felleisen}}
+      books [cities, wild-seed, embassytown, little-schemer]]
 
-(facts "books->string"
-  (books->string []) => "No books."
-  (books->string [cities])
-    => "1 book. The City and the City, written by China Miéville (1972 - )."
-  (books->string [little-schemer, cities, wild-seed])
-    => "3 books. The Little Schemer, written by Daniel Friedman (1944 - ), Matthias Felleisen. The City and the City, written by China Miéville (1972 - ). Wild Seed, written by Octavia E. Butler (1947 - 2006).")
+  (facts "has-author?"
+    (has-author? cities china)             => true
+    (has-author? cities felleisen)         => false
+    (has-author? little-schemer felleisen) => true
+    (has-author? little-schemer friedman)  => true
+    (has-author? little-schemer octavia)   => false)
 
-(facts "books-by-author"
-  (books-by-author "China Miéville" books) => [cities, embassytown])
+  (facts "authors"
+    (authors [cities, wild-seed])              => #{china, octavia}
+    (authors [cities, wild-seed, embassytown]) => #{china, octavia}
+    (authors [little-schemer, cities])         => #{china, friedman, felleisen})
 
-(facts "book-titles-by-author"
-  (book-titles-by-author "China Miéville" books)
-    => ["The City and the City" "Embassytown"]
-  (book-titles-by-author "Octavia E. Butler" books)
-    => ["Wild Seed"])
+  (facts "all-author-names"
+    (all-author-names []) => #{}
+    (all-author-names [cities, wild-seed])
+      => #{"China Miéville" "Octavia E. Butler"}
+    (all-author-names books)
+      => #{"Matthias Felleisen" "China Miéville"
+           "Octavia E. Butler" "Daniel Friedman"})
 
-(facts "author-names"
-  (author-names [china octavia]) => #{"Octavia E. Butler" "China Miéville"})
+  (facts "author->string"
+    (author->string felleisen) => "Matthias Felleisen"
+    (author->string friedman)  => "Daniel Friedman (1944 - )"
+    (author->string octavia)   => "Octavia E. Butler (1947 - 2006)")
 
-(facts "authors"
-  (authors books) => #{china octavia})
+  (facts "authors->string"
+    (authors->string (:authors little-schemer))
+         => (every-checker (contains "Daniel Friedman (1944 - )")
+                           (contains "Matthias Felleisen")
+                           (contains ", "))
+    (authors->string #{octavia})                => "Octavia E. Butler (1947 - 2006)"
+    (authors->string #{})                       => ""
+    (authors->string #{octavia, friedman})
+        => (every-checker (contains "Octavia E. Butler (1947 - 2006)")
+                          (contains "Daniel Friedman (1944 - )")
+                          (contains ", ")))
 
-(facts "books->author-names"
-  (books->author-names books) => #{"Octavia E. Butler" "China Miéville"})
+  (facts "book->string"
+    (book->string wild-seed) => "Wild Seed, written by Octavia E. Butler"
+    (book->string little-schemer)
+      => (every-checker (has-prefix "The Little Schemer, written by ")
+                        (has-suffix #"Daniel Friedman \(1944 - \), Matthias Felleisen|Matthias Felleisen, Daniel Friedman \(1944 - \)")))
+
+  (facts "books->string"
+    (books->string []) => "No books."
+    (books->string [cities])
+      => "1 book. The City and the City, written by China Miéville (1972 - )."
+    (books->string [little-schemer, cities, wild-seed])
+      => #"3 books. The Little Schemer, written by (Daniel Friedman \(1944 - \), Matthias Felleisen|Matthias Felleisen, Daniel Friedman \(1944 - \)). The City and the City, written by China Miéville \(1972 - \). Wild Seed, written by Octavia E. Butler \(1947 - 2006\).")
+
+  (facts "books-by-author"
+    (books-by-author china books)   => (cities embassytown)
+    (books-by-author octavia books) => (wild-seed))
+
+  (facts "book-titles-by-author"
+    (book-titles-by-author "China Miéville" books)
+      => ["The City and the City" "Embassytown"]
+    (book-titles-by-author "Octavia E. Butler" books)
+      => ["Wild Seed"])
+
+  (facts "author-names"
+    (author-names [china octavia]) => #{"Octavia E. Butler" "China Miéville"})
+
+  (facts "authors"
+    (authors books) => #{china octavia})
+
+  (facts "books->author-names"
+    (books->author-names books) => #{"Octavia E. Butler" "China Miéville"}))
 
 ; %____%
