@@ -96,16 +96,16 @@
 (defn books-by-author [author books]
   :-)
 
-(defn book-titles-by-author [author books]
+(defn author-by-name [name authors]
   :-)
 
-(defn author-names [authors]
+(defn living-authors [authors]
   :-)
 
-(defn authors [books]
+(defn has-a-living-author? [book]
   :-)
 
-(defn books->author-names [books]
+(defn books-by-living-authors [books]
   :-)
 
 ; %________%

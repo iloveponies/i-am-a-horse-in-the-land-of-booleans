@@ -165,11 +165,23 @@
                :death-year 2006}
       friedman {:name "Daniel Friedman" :birth-year 1944}
       felleisen {:name "Matthias Felleisen"}
+      jrrtolkien {:name "J. R. R. Tolkien" :birth-year 1892 :death-year 1973}
+      christopher {:name "Christopher Tolkien" :birth-year 1924}
+      kay {:name "Guy Gavriel Kay" :birth-year 1954}
+      dick {:name "Philip K. Dick", :birth-year 1928, :death-year 1982}
+      zelazny {:name "Roger Zelazny", :birth-year 1937, :death-year 1995}
+
+      authors #{china, felleisen, octavia, friedman}
+
       cities {:title "The City and the City" :authors #{china}}
       wild-seed {:title "Wild Seed", :authors #{octavia}}
       embassytown {:title "Embassytown", :authors #{china}}
       little-schemer {:title "The Little Schemer"
                      :authors #{friedman, felleisen}}
+      silmarillion {:title "Silmarillion"
+                    :authors #{jrrtolkien, christopher, kay}}
+      deus-irae {:title "Deus Irae", :authors #{dick, zelazny}}
+
       books [cities, wild-seed, embassytown, little-schemer]]
 
   (facts "has-author?"
@@ -223,22 +235,30 @@
       => #"3 books. The Little Schemer, written by (Daniel Friedman \(1944 - \), Matthias Felleisen|Matthias Felleisen, Daniel Friedman \(1944 - \)). The City and the City, written by China Miéville \(1972 - \). Wild Seed, written by Octavia E. Butler \(1947 - 2006\).")
 
   (facts "books-by-author"
-    (books-by-author china books)   => (cities embassytown)
-    (books-by-author octavia books) => (wild-seed))
+    (books-by-author china books)   => (just [cities embassytown])
+    (books-by-author octavia books) => (just [wild-seed]))
 
-  (facts "book-titles-by-author"
-    (book-titles-by-author "China Miéville" books)
-      => ["The City and the City" "Embassytown"]
-    (book-titles-by-author "Octavia E. Butler" books)
-      => ["Wild Seed"])
+  (facts "author-by-name"
+    (author-by-name "Octavia E. Butler" authors)                => octavia
+    (author-by-name "Octavia E. Butler" #{felleisen, friedman}) => nil
+    (author-by-name "China Miéville" authors)                   => china
+    (author-by-name "Goerge R. R. Martin" authors)              => nil)
 
-  (facts "author-names"
-    (author-names [china octavia]) => #{"Octavia E. Butler" "China Miéville"})
+  (facts "living-authors"
+    (living-authors authors)             => (just #{china, felleisen, friedman})
+    (living-authors #{octavia})          => (just #{})
+    (living-authors #{china, felleisen}) => (just #{china, felleisen}))
 
-  (facts "authors"
-    (authors books) => #{china octavia})
-
-  (facts "books->author-names"
-    (books->author-names books) => #{"Octavia E. Butler" "China Miéville"}))
+  (facts "has-a-living-author?"
+    (has-a-living-author? wild-seed)      => false
+    (has-a-living-author? silmarillion)   => true
+    (has-a-living-author? little-schemer) => true
+    (has-a-living-author? cities)         => true
+    (has-a-living-author? deus-irae)      => false)
+  
+  (facts "books-by-living-authors"
+    (books-by-living-authors books) => (just #{little-schemer cities embassytown})
+    (books-by-living-authors (concat books [deus-irae, silmarillion]))
+      => (just #{little-schemer cities embassytown silmarillion})))
 
 ; %____%
