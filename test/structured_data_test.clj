@@ -180,7 +180,7 @@
       dick {:name "Philip K. Dick", :birth-year 1928, :death-year 1982}
       zelazny {:name "Roger Zelazny", :birth-year 1937, :death-year 1995}
 
-      authors #{china, felleisen, octavia, friedman}
+      authors-set #{china, felleisen, octavia, friedman}
 
       cities {:title "The City and the City" :authors #{china}}
       wild-seed {:title "Wild Seed", :authors #{octavia}}
@@ -247,13 +247,13 @@
     (books-by-author octavia books) => (just [wild-seed]))
 
   (facts "author-by-name"
-    (author-by-name "Octavia E. Butler" authors)                => octavia
+    (author-by-name "Octavia E. Butler" authors-set)            => octavia
     (author-by-name "Octavia E. Butler" #{felleisen, friedman}) => nil
-    (author-by-name "China Miéville" authors)                   => china
-    (author-by-name "Goerge R. R. Martin" authors)              => nil)
+    (author-by-name "China Miéville" authors-set)               => china
+    (author-by-name "Goerge R. R. Martin" authors-set)          => nil)
 
   (facts "living-authors"
-    (living-authors authors)             => (just #{china, felleisen, friedman})
+    (living-authors authors-set)         => (just #{china, felleisen, friedman})
     (living-authors #{octavia})          => (just #{})
     (living-authors #{china, felleisen}) => (just #{china, felleisen}))
 
