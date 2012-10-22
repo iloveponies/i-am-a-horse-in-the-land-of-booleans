@@ -133,14 +133,18 @@
   
   (facts "titles"
     (titles [cities]) => ["The City and the City"]
-    (titles books)    => ["The City and the City" "Wild Seed" "Embassytown"]))
+    (titles books)    => (just ["The City and the City"
+                                "Wild Seed"
+                                "Embassytown"
+                                "The Little Schemer"]
+                               :in-any-order)))
 
 (facts "monotonic?"
-  (monotonic? [1 2 3])     => true
-  (monotonic? [0 1 10 11]) => true
-  (monotonic? [3 2 0 -3])  => true
-  (monotonic? [3 2 2])     => true
-  (monotonic? [1 2 1 0])   => false)
+       (monotonic? [1 2 3])     => true
+       (monotonic? [0 1 10 11]) => true
+       (monotonic? [3 2 0 -3])  => true
+       (monotonic? [3 2 2])     => true
+       (monotonic? [1 2 1 0])   => false)
 
 (facts "stars"
   (stars 1) => "*"
@@ -208,7 +212,6 @@
     (all-author-names books)
       => #{"Matthias Felleisen" "China Miéville"
            "Octavia E. Butler" "Daniel Friedman"})
-
   (facts "author->string"
     (author->string felleisen) => "Matthias Felleisen"
     (author->string friedman)  => "Daniel Friedman (1944 - )"
@@ -264,6 +267,4 @@
   (facts "books-by-living-authors"
     (books-by-living-authors books) => (just #{little-schemer cities embassytown})
     (books-by-living-authors (concat books [deus-irae, silmarillion]))
-      => (just #{little-schemer cities embassytown silmarillion})))
-
-; %____%
+    => (just #{little-schemer cities embassytown silmarillion})))
