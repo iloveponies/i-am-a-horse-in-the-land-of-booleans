@@ -1,7 +1,7 @@
 (ns i-am-a-horse-in-the-land-of-booleans)
 
 (defn my-boolean [x]
-  ":(")
+  (if x true false))
 
 (defn abs [x]
   ":(")
