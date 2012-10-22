@@ -104,6 +104,11 @@
     (author-count cities)         => 1
     (author-count wild-seed)      => 1
     (author-count little-schemer) => 2)
+
+  (facts "multiple-authors?"
+         (multiple-authors? cities)         => false
+         (multiple-authors? wild-seed)      => false
+         (multiple-authors? little-schemer) => true)
   
   (facts "add-author"
     (add-author little-schemer {:name "Gerald J. Sussman"})
