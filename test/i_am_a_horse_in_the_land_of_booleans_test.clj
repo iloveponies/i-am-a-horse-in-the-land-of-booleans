@@ -14,7 +14,7 @@
   (abs 42) => 42)
 
 (facts "divides?"
-       (divides? 2 4) => true
+        => true
        (divides? 4 2) => false
        (divides? 5 10) => true
        (divides? 2 5) => false)
