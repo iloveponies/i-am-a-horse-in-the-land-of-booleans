@@ -1,27 +1,54 @@
 (ns i-am-a-horse-in-the-land-of-booleans)
 
 (defn my-boolean [x]
-  ":(")
+  (if (= x nil)
+    false
+    (if (= x false)
+      false
+      true)))
 
 (defn abs [x]
-  ":(")
+  (if(< x 0)
+  	(- x)
+  	x))
 
 (defn divides? [divisor n]
-  ":(")
+  (= (mod n divisor) 0 ))
 
 (defn fizzbuzz [n]
-  ":(")
+  (cond
+   (divides? 15 n) "gotcha!"
+   (divides? 3 n) "fizz"
+   (divides? 5 n) "buzz"
+	:else ""
+   ))
+
+(defn fizzbuzz2 [n]
+  (if (divides? 3 n)
+	(if (divides? 5 n)
+      "gotcha!"
+      "fizz")
+	(if (divides? 5 n)
+      "buzz"
+      "")))
 
 (defn teen? [age]
-  ":(")
+  (<= 13 age 19))
 
 (defn not-teen? [age]
-  ":(")
+  (not (teen? age)))
 
 (defn generic-doublificate [x]
-  ":(")
+  (cond
+   (number? x)(* 2 x)
+   (empty? x) nil
+   (or (list? x) (vector? x))
+   		(* 2 (count x))
+   :else (my-boolean x)))
 
 (defn leap-year? [year]
-  ":(")
-
-; '_______'
+  (cond
+   (divides? 400 year) true
+   (divides? 100 year) false
+   (divides? 4 year) true
+   :else false))
