@@ -230,7 +230,8 @@
                           (contains ", ")))
 
   (facts "book->string"
-    (book->string wild-seed) => "Wild Seed, written by Octavia E. Butler"
+         (book->string wild-seed)
+         => "Wild Seed, written by Octavia E. Butler (1947 - 2006)"
     (book->string little-schemer)
       => (every-checker (has-prefix "The Little Schemer, written by ")
                         (has-suffix #"Daniel Friedman \(1944 - \), Matthias Felleisen|Matthias Felleisen, Daniel Friedman \(1944 - \)")))
