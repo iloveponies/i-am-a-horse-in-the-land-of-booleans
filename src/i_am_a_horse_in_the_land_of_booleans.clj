@@ -21,4 +21,7 @@
 (defn generic-doublificate [x]
   ":(")
 
+(defn leap-year? [year]
+  ":(")
+
 ; '_______'
