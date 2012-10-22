@@ -55,3 +55,5 @@
   (leap-year? 12)  => true
   (leap-year? 20)  => true
   (leap-year? 15)  => false)
+
+(my-boolean true)
