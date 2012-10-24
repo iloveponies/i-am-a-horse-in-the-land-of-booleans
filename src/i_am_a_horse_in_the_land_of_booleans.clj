@@ -1,10 +1,13 @@
 (ns i-am-a-horse-in-the-land-of-booleans)
 
-(defn my-boolean [x] (boolean x))
+(defn my-boolean [x] 
+  (if (or (= nil x) (= false x))
+    false
+    true))
 
 (defn abs [x] (if(>= x 0) x (- x)))
 
-(defn divides? [divisor n] (if (== (mod n divisor) 0) true false))
+(defn divides? [divisor n] (== (mod n divisor) 0))
 
 (defn fizzbuzz [n]
   (cond
