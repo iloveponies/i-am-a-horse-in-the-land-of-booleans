@@ -3,7 +3,14 @@
 ; Harjoitus 1
 (defn my-boolean
         [x]
-        (boolean x))
+        (if (= x nil)
+        false
+                (if (= x false)
+                false
+                true))
+)
+
+
 
 ; Harjoitus 3
 (defn abs
