@@ -1,9 +1,7 @@
 (ns i-am-a-horse-in-the-land-of-booleans)
 
 (defn my-boolean [x] 
-  (if (or (= nil x) (= false x))
-    false
-    true))
+  (if (or (= nil x) (= false x)) false true))
 
 (defn abs [x] (if(>= x 0) x (- x)))
 
