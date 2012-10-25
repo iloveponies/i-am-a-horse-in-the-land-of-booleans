@@ -11,7 +11,7 @@
   ))
 
 (defn divides? [divisor n]
-  (if (= (mod n divisor) 0) true false))
+  (= (mod n divisor) 0) true false)
 
 (defn fizzbuzz [n]
   (cond
@@ -22,13 +22,8 @@
   ))
 
 (defn teen? [age]
-  (if (>= age 13)
-    (if (<= age 19)
-      true
-      false
-    )
-    false
-  ))
+  (<= 13 age 19)
+)
 
 (defn not-teen? [age]
   (not (teen? age)))
