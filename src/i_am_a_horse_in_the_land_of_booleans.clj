@@ -23,7 +23,7 @@
 
 (defn teen? 
   [age]
-  (and (< age 20) (> age 12)))
+  (< 12 age 20))
 
 (defn not-teen? [age]
   (not (teen? age)))
