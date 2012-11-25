@@ -42,6 +42,9 @@
 (defn author-count [book]
   :-)
 
+(defn multiple-authors? [book]
+  :-)
+
 (defn add-author [book new-author]
   :-)
 
