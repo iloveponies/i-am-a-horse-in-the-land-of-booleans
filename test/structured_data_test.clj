@@ -20,52 +20,84 @@
   (spiff-destructuring [1 2 3])         => 4
   (spiff-destructuring [1 2 -34 4 5 6]) => -33)
 
-(facts "width"
-  (width (rectangle [1 1] [5 1]))  => 4
-  (width (rectangle [1 1] [1 1]))  => 0
-  (width (rectangle [3 1] [10 4])) => 7)
+(tabular
+  (facts "width"
+    (width (rectangle ?bottom-left ?top-right)) => ?width)
+  ?bottom-left ?top-right ?width
+  [1 1]        [5 1]      4
+  [1 1]        [1 1]      0
+  [3 1]        [10 4]     7
+  [-1 -1]      [0 0]      1
+  [-5 2]       [0 2]      5)
 
-(facts "height"
-  (height (rectangle [1 1] [5 1])) => 0
-  (height (rectangle [1 1] [5 5])) => 4
-  (height (rectangle [0 0] [2 3])) => 3)
+(tabular
+  (facts "height"
+    (height (rectangle ?bottom-left ?top-right)) => ?height)
+  ?bottom-left ?top-right ?height
+  [1 1]        [5 1]      0
+  [-1 -1]      [0 0]      1
+  [2 -7]       [4 4]      11
+  [1 1]        [5 5]      4
+  [0 0]        [2 3]      3)
 
-(facts "square?"
-  (square? (rectangle [1 1] [2 2])) => true
-  (square? (rectangle [1 1] [2 3])) => false
-  (square? (rectangle [1 1] [1 1])) => true
-  (square? (rectangle [3 2] [1 0])) => true
-  (square? (rectangle [3 2] [1 1])) => false)
+(tabular
+  (facts "square?"
+    (square? (rectangle ?bottom-left ?top-right)) => ?square?)
+  ?bottom-left ?top-right ?square?
+  [1 1]        [2 2]      true
+  [1 1]        [2 3]      false
+  [1 1]        [1 1]      true
+  [3 2]        [1 0]      true
+  [3 2]        [1 1]      false
+  [-1 -1]      [0 0]      true
+  [-2 -4]      [0 -2]     true
+  [-2 -3]      [1 1]      false)
 
-(facts "area"
-  (area (rectangle [1 1] [5 1]))  => 0
-  (area (rectangle [0 0] [1 1]))  => 1
-  (area (rectangle [0 0] [4 3]))  => 12
-  (area (rectangle [3 1] [10 4])) => 21)
+(tabular
+  (facts "area"
+    (area (rectangle ?bottom-left ?top-right)) => ?area)
+  ?bottom-left ?top-right ?area
+  [1 1]        [5 1]      0
+  [0 0]        [1 1]      1
+  [0 0]        [4 3]      12
+  [-1 -1]      [3 7]      32
+  [-2 -7]      [-1 -2]    5
+  [3 1]        [10 4]     21)
 
-(facts "contains-point?"
-  (contains-point? (rectangle [0 0] [2 2])
-                   (point 1 1))            => true
-  (contains-point? (rectangle [0 0] [2 2])
-                   (point 2 1))            => true
-  (contains-point? (rectangle [0 0] [2 2])
-                   (point -3 1))           => false
-  (contains-point? (rectangle [0 0] [2 2])
-                   (point 1 3))            => false
-  (contains-point? (rectangle [1 1] [2 2])
-                   (point 1 1))            => true
-  (contains-point? (rectangle [1 1] [1 1])
-                   (point 1 1))            => true)
+(tabular
+  (facts "contains-point?"
+    (contains-point? (rectangle ?bottom-left ?top-right)
+                      ?point)
+         => ?contains?)
+  ?bottom-left ?top-right ?point  ?contains?
+  [0 0]        [2 2]     [1 1]   true
+  [0 0]        [2 2]     [2 1]   true
+  [0 0]        [2 2]     [-3 1]  false
+  [-2 -5]      [1 5]     [-2 -1] true
+  [-2 -5]      [1 5]     [-3 -1] false
+  [0 0]        [2 2]     [1 3]   false
+  [1 1]        [2 2]     [1 1]   true
+  [1 1]        [1 1]     [1 1]   true
 
-(facts "contains-rectangle?"
-  (contains-rectangle? (rectangle [0 0] [3 3])
-                       (rectangle [1 1] [2 2])) => true
-  (contains-rectangle? (rectangle [0 0] [2 2])
-                       (rectangle [1 1] [3 3])) => false
-  (contains-rectangle? (rectangle [0 0] [1 1])
-                       (rectangle [0 0] [1 1])) => true
-  (contains-rectangle? (rectangle [0 0] [1 1])
-                       (rectangle [1 1] [2 2])) => false)
+  [-1 2]       [3 7]     [-6 10] false
+  [-1 2]       [3 7]     [0 10]  false
+  [-1 2]       [3 7]     [5 11]  false
+  [-1 2]       [3 7]     [5 4]   false
+  [-1 2]       [3 7]     [6 1]   false
+  [-1 2]       [3 7]     [0 0]   false
+  [-1 2]       [3 7]     [-2 0]  false
+  [-1 2]       [3 7]     [-5 5]  false)
+
+(tabular
+  (facts "contains-rectangle?"
+    (contains-rectangle? ?x1 ?y1 ?x2 ?y2) => ?contains?)
+  ?x1     ?y1     ?x2     ?y2     ?contains?
+  [0 0]   [3 3]   [1 1]   [2 2]   true
+  [0 0]   [2 2]   [1 1]   [3 3]   false
+  [0 0]   [1 1]   [0 0]   [1 1]   true
+  [0 0]   [1 1]   [1 1]   [2 2]   false
+  [-2 -2] [2 2]   [-1 -1] [1 1]   true
+  [-2 -2] [2 2]   [0 0]   [3 4]   false)
 
 (def china {:name "China Miéville", :birth-year 1972})
 (def octavia {:name "Octavia E. Butler"
@@ -148,6 +180,7 @@
 
 (facts "contains-duplicates?"
   (contains-duplicates? [1 1 2 3 -40])   => true
+  (contains-duplicates? [1 2 2 3 -40])   => true
   (contains-duplicates? [1 2 3 -40])     => false
   (contains-duplicates? [1 2 3 "a" "a"]) => true)
 
