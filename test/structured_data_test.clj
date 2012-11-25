@@ -90,7 +90,8 @@
 
 (tabular
   (facts "contains-rectangle?"
-    (contains-rectangle? ?x1 ?y1 ?x2 ?y2) => ?contains?)
+    (contains-rectangle? (rectangle ?x1 ?y1)
+                         (rectangle ?x2 ?y2)) => ?contains?)
   ?x1     ?y1     ?x2     ?y2     ?contains?
   [0 0]   [3 3]   [1 1]   [2 2]   true
   [0 0]   [2 2]   [1 1]   [3 3]   false
