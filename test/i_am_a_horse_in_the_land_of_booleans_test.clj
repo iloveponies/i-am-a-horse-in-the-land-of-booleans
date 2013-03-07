@@ -48,10 +48,17 @@
   (generic-doublificate [])       => nil
   (generic-doublificate {:a 1})   => true)
 
-(facts "leap-year?"
-  (leap-year? 100) => false
-  (leap-year? 200) => false
-  (leap-year? 400) => true
-  (leap-year? 12)  => true
-  (leap-year? 20)  => true
-  (leap-year? 15)  => false)
+(tabular
+  (fact "leap-year?"
+    (leap-year? ?year) => ?expected)
+  ?year   ?expected
+  100     false
+  200     false
+  400     true
+  800     true
+  2000    true
+  2200    false
+  12      true
+  20      true
+  15      false
+  1913    false)
