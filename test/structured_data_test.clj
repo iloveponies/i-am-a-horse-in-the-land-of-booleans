@@ -199,7 +199,16 @@
                        :authors [friedman, felleisen]})
     => {:title "The Little Schemer" :authors #{friedman, felleisen}}
   (old-book->new-book {:title "Wild Seed", :authors [octavia]})
-    => {:title "Wild Seed", :authors #{octavia}})
+    => {:title "Wild Seed", :authors #{octavia}}
+  (old-book->new-book
+    {:awards ["Hugo" "World Fantasy Award" "Arthur C. Clarke Award"
+              "British Science Fiction Award"]
+     :title "The City and the City"
+     :authors [{:birth-year 1972, :name "China Miéville"}]})
+    => {:awards ["Hugo" "World Fantasy Award" "Arthur C. Clarke Award"
+                 "British Science Fiction Award"]
+        :title "The City and the City"
+        :authors #{{:birth-year 1972, :name "China Miéville"}}})
 
 
 (let [china {:name "China Miéville", :birth-year 1972}
