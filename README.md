@@ -1,15 +1,7 @@
 # structured-data
 
-I'm an app. Or maybe I'm a library? I haven't decided yet. 
-
-The choice is up to you!
+I'm part of the [120 hour epic sax marathon](http://iloveponies.github.com/120-hour-epic-sax-marathon/).
 
 ## Usage
 
-FIXME
-
-## License
-
-Copyright © 2012 FIXME
-
-Distributed under the Eclipse Public License, the same as Clojure.
+Make a fork of me!
