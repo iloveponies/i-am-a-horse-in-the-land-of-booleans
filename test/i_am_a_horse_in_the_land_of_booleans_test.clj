@@ -3,30 +3,16 @@
   (:use i-am-a-horse-in-the-land-of-booleans
         midje.sweet))
 
-(facts "1 boolean"
+(facts "boolean" {:exercise 1
+                  :points 1}
   (boolean "foo") => true
   (boolean nil) => false
   (boolean (+ 2 3)) => true
   (boolean true) => true
   (boolean false) => false)
 
-(facts "2 abs"
-  (abs -2) => 2
-  (abs 42) => 42)
-
-(facts "3 divides?"
-       (divides? 2 4) => true
-       (divides? 4 2) => false
-       (divides? 5 10) => true
-       (divides? 2 5) => false)
-
-(facts "4 fizzbuzz"
-  (fizzbuzz 2) => ""
-  (fizzbuzz 45) => "gotcha!"
-  (fizzbuzz 48) => "fizz"
-  (fizzbuzz 70) => "buzz")
-
-(facts "5 teen?"
+(facts "teen?" {:exercise 2
+                :points 1}
   (teen? 12) => false
   (teen? 15) => true
   (teen? 13) => true
@@ -34,14 +20,27 @@
   (teen? 20) => false
   (teen? 27) => false)
 
-(facts "6 not-teen?"
-  (not-teen? 13) => false
-  (not-teen? 25) => true
-  (not-teen? 12) => true
-  (not-teen? 19) => false
-  (not-teen? 20) => true)
+(facts "abs" {:exercise 3
+              :points 1}
+  (abs -2) => 2
+  (abs 42) => 42)
 
-(facts "7 generic-doublificate"
+(facts "divides?" {:exercise 4
+                   :points 1}
+       (divides? 2 4) => true
+       (divides? 4 2) => false
+       (divides? 5 10) => true
+       (divides? 2 5) => false)
+
+(facts "fizzbuzz" {:exercise 5
+                   :points 1}
+  (fizzbuzz 2) => ""
+  (fizzbuzz 45) => "gotcha!"
+  (fizzbuzz 48) => "fizz"
+  (fizzbuzz 70) => "buzz")
+
+(facts "generic-doublificate" {:exercise 6
+                               :points 1}
   (generic-doublificate 1)        => 2
   (generic-doublificate [1 2])    => 4
   (generic-doublificate '(65 21)) => 4
@@ -49,7 +48,16 @@
   (generic-doublificate [])       => nil
   (generic-doublificate {:a 1})   => true)
 
-(tabular "8 leap-year?"
+(facts "not-teen?" {:exercise 7
+                    :points 1}
+  (not-teen? 13) => false
+  (not-teen? 25) => true
+  (not-teen? 12) => true
+  (not-teen? 19) => false
+  (not-teen? 20) => true)
+
+(tabular "leap-year?" {:exercise 8
+                       :points 1}
   (fact
     (leap-year? ?year) => ?expected)
     ?year   ?expected
