@@ -12,9 +12,8 @@
     x))
 
 (defn divides? [divisor n]
-  (if (== (mod n divisor) 0)
-    true
-    false))
+  (== (mod n divisor) 0))
+
 
 (defn fizzbuzz [n]
   (cond
@@ -24,14 +23,10 @@
    :else ""))
 
 (defn teen? [age]
-  (if (< 12 age 20)
-    true
-    false))
+  (<= 13 age 19))
 
 (defn not-teen? [age]
-  (if (teen? age)
-    false
-    true))
+  (not (teen? age)))
 
 (defn generic-doublificate [x]
   (cond
