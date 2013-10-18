@@ -50,7 +50,7 @@
   )
 
 (defn leap-year? [year]
-  ":?"
+  ":3"
   (cond
    (divides? 400 year) true
    (divides? 100 year) false
