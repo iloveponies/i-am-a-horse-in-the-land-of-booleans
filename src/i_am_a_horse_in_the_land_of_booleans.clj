@@ -8,7 +8,7 @@
   (if (< x 0) (- x) x))
 
 (defn divides? [divisor n]
-  (if (== (mod n divisor) 0) true false))
+  (== (mod n divisor) 0))
 
 (defn fizzbuzz [n]
   (cond
@@ -18,7 +18,7 @@
     :else ""))
 
 (defn teen? [age]
-  (if (< 12 age 20) true false))
+  (< 12 age 20))
 
 (defn not-teen? [age]
   (not (teen? age)))
@@ -38,6 +38,8 @@
     :else false))
 
 ; '_______'
+
+
 
 
 
