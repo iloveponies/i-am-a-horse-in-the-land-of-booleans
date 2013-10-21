@@ -33,7 +33,7 @@
 
 (defn not-teen? [age]
     (not 
-        (teen age)
+        (teen? age)
     )
 )
 
@@ -49,9 +49,9 @@
 
 (defn leap-year? [y]
     (cond
-        (divides y 400) true
-        (divides y 100) false
-        (divides y 4) true
+        (divides? 400 y) true
+        (divides? 100 y) false
+        (divides? 4 y) true
         :else false
     )
 )
