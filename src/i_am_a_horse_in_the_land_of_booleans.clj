@@ -2,7 +2,10 @@
   (:refer-clojure :exclude [boolean]))
 
 (defn boolean [x]
-  (if (= x nil) false (if (= x false) false true)))
+  (cond
+   (= x nil) false
+   (= x false) false
+   :else true))
 
 (defn abs [x]
   (if (< x 0)
@@ -10,7 +13,7 @@
      x))
 
 (defn divides? [divisor n]
-  (if (= 0 (mod n divisor)) true false))
+  (= 0 (mod n divisor)))
 
 (defn fizzbuzz [n]
   (cond
@@ -41,4 +44,6 @@
    :else false))
 
 ; '_______'
+
+
 
