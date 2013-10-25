@@ -14,7 +14,9 @@
     x))
 
 (defn divides? [divisor n]
-  ":(")
+  (if (mod divisor n)
+    true
+    false))
 
 (defn fizzbuzz [n]
   ":(")
