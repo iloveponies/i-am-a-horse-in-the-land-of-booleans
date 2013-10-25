@@ -33,17 +33,24 @@
     false))
 
 (defn not-teen? [age]
-  ":(")
+  (if (teen? age)
+    false
+    true))
 
 (defn generic-doublificate [x]
   (cond
     (number? x) (* 2 x)
-    (empty? x) nil
-    (or (list? x) (vector? x)) (* 2 (count x))
+      (empty? x) nil
+      (or (list? x) (vector? x)) (* 2 (count x))
     :else true))
 
 (defn leap-year? [year]
-  ":(")
+  (cond
+    (= (mod year 400) 0) true
+    (= (mod year 100) 0) false
+    (= (mod year 4) 0) true
+    :else false
+                  ))
 
 ; '_______'
 
