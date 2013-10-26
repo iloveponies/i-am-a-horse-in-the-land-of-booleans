@@ -7,7 +7,7 @@
 
 (defn abs [x]
  (if (< x 0)
-   (* x -1)
+   (- x)
      x))
 
 
@@ -24,11 +24,7 @@
 
 
 (defn teen? [age]
-  (if (< age 20)
-    (if  (> age 12)
-      true
-        false)
-          false))
+   (< 12 age 20))
 
 
 (defn not-teen? [age]
@@ -41,7 +37,7 @@
     (empty? x) nil
     (list? x) (* (count x) 2)
     (vector? x) (* (count x) 2)
-    (= x x) (boolean true)))
+    :else (boolean true)))
 
 
 (defn leap-year? [year]
@@ -49,6 +45,6 @@
    (divides? 400 year) (boolean true)
    (divides? 100 year) (boolean false)
    (divides? 4 year) (boolean true)
-   (= 1 1) (boolean false)))
+   :else (boolean false)))
 
 ; '_______'
