@@ -20,7 +20,7 @@
   (divides? 15 n) (str "gotcha!")
   (divides? 5 n) (str "buzz")
   (divides? 3 n) (str "fizz")
-  (divides? n n) (str "")))
+  :else (str "")))
 
 
 (defn teen? [age]
