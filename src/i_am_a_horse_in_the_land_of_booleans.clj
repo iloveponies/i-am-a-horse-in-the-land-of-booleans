@@ -37,10 +37,6 @@
 
 (defn leap-year? [year]
 
-  ;; div by 100 AND 400 -> leap
-  ;; div by 4 and not 100 (or 100 ja 400) -> leap
-  ;; not leap
-
   (and (divides? 4 year)
        (or
         (not (divides? 100 year))
