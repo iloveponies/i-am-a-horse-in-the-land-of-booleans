@@ -3,8 +3,8 @@
 
 (defn boolean [x]
   (if (or (= nil x) (= false x))
-    false)
-    true)
+    false
+    true))
 
 (defn sign [x]
   (if (< x 0)
@@ -21,7 +21,7 @@
 
 (defn fizzbuzz [n]
   (cond
-    (divides? 15 n) "gotchya"
+    (divides? 15 n) "gotcha!"
     (divides? 3 n) "fizz"
     (divides? 5 n) "buzz"
     :else ""))
@@ -35,7 +35,7 @@
 (defn generic-doublificate [x]
   (cond
     (number? x) (* 2 x)
-    (empty? x) true
+    (empty? x) nil
     (or (list? x) (vector? x)) (* 2 (count x ))
      :else true))
 
