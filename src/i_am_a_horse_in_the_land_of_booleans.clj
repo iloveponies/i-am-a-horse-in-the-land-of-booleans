@@ -22,7 +22,7 @@
     :else           ""))
 
 (defn teen? [age]
-  (if (> 18 age 13) true false))
+  (if (> 20 age 12) true false))
 
 (defn not-teen? [age]
   (not (teen? age)))
@@ -41,6 +41,7 @@
   (cond
     (divides? 400 year) true
     (divides? 100 year) false
-    (divides? 4   year) true))
+    (divides? 4   year) true
+    :else               false))
 
 ; '_______'
