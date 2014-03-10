@@ -43,13 +43,3 @@
     false))
 
 ; '_______'
-; A year is a leap year if it is divisible by 4,
-; except if it is divisible by 100, in which case
-; it still is a leap year if it is divisible by 400.
-
-(leap-year? 100) ;=> false
-(leap-year? 200) ;=> false
-(leap-year? 400) ;=> true
-(leap-year? 12)  ;=> true
-(leap-year? 20)  ;=> true
-(leap-year? 15)  ;=> false
