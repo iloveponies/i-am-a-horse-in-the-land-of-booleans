@@ -1,13 +1,24 @@
 (ns structured-data)
 
 (defn do-a-thing [x]
-  :-)
+  (let [xx (+ x x)]
+    (Math/pow xx xx)
+    )
+  )
 
 (defn spiff [v]
-  :-)
+  (let [first (get v 0)
+        third (get v 2)]
+      (if (and first third)
+        (+ first third)
+        first
+        )
+    )
+  )
 
 (defn cutify [v]
-  :-)
+  (conj v "<3")
+  )
 
 (defn spiff-destructuring [v]
   :-)
