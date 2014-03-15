@@ -21,7 +21,13 @@
   )
 
 (defn spiff-destructuring [v]
-  :-)
+  (let [[first second third] v]
+    (if (and first third)
+      (+ first third)
+      first
+      )
+    )
+  )
 
 (defn point [x y]
   [x y])
@@ -30,22 +36,41 @@
   [bottom-left top-right])
 
 (defn width [rectangle]
-  :-)
+  (let [ [[x1 y1][x2 y2]] rectangle ]
+    (- x2 x1)
+    )
+  )
 
 (defn height [rectangle]
-  :-)
+  (let [ [[x1 y1][x2 y2]] rectangle ]
+    (- y2 y1)
+    )
+  )
 
 (defn square? [rectangle]
-  :-)
+  (= (width rectangle) (height rectangle))
+  )
 
 (defn area [rectangle]
-  :-)
+  (let [rwidth (width rectangle)
+        rheight (height rectangle)]
+    (* rwidth rheight)
+    )
+  )
 
 (defn contains-point? [rectangle point]
-  :-)
+  (let [ [[x1 y1][x2 y2]] rectangle
+         [px py] point]
+    (and (<= x1 px x2) (<= y1 py y2))
+    )
+  )
 
 (defn contains-rectangle? [outer inner]
-  :-)
+  (let [[point1 point2] inner]
+    (and (contains-point? outer point1)
+    (contains-point? outer point2) )
+    )
+  )
 
 (defn title-length [book]
   :-)
