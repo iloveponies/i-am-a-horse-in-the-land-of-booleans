@@ -73,64 +73,116 @@
   )
 
 (defn title-length [book]
-  :-)
+  (count (:title book) )
+  )
 
 (defn author-count [book]
-  :-)
+  (count (:authors book))
+  )
 
 (defn multiple-authors? [book]
-  :-)
+  (< 1 (author-count book) )
+  )
 
 (defn add-author [book new-author]
-  :-)
+  (assoc book :authors (conj (:authors book) new-author))
+  )
 
 (defn alive? [author]
-  :-)
+  (not (contains? author :death-year))
+  )
 
 (defn element-lengths [collection]
-  :-)
+  (map count collection)
+  )
 
 (defn second-elements [collection]
-  :-)
+  (let [second (fn [vector] (get vector 1))]
+    (map second collection)
+    )
+  )
 
 (defn titles [books]
-  :-)
+  (map :title books)
+  )
 
 (defn monotonic? [a-seq]
-  :-)
+  (if (>=(get a-seq 0) (get a-seq 1))
+    (apply >= a-seq)
+    (apply <= a-seq)
+    )
+  )
 
 (defn stars [n]
-  :-)
+  (apply str (repeat n "*"))
+    )
 
 (defn toggle [a-set elem]
-  :-)
+  (if (contains? a-set elem)
+    (disj a-set elem)
+    (conj a-set elem)
+    )
+  )
 
 (defn contains-duplicates? [a-seq]
-  :-)
+  (not (= (count a-seq) (count (set a-seq))))
+  )
 
 (defn old-book->new-book [book]
-  :-)
+  (assoc book :authors (set (:authors book)))
+  )
 
 (defn has-author? [book author]
-  :-)
+  (contains? (:authors book) author)
+  )
 
 (defn authors [books]
-  :-)
+  (apply clojure.set/union (map :authors books))
+  )
 
 (defn all-author-names [books]
-  :-)
+  (set (map :name (authors books)))
+  )
 
 (defn author->string [author]
-  :-)
+  (let [
+        name (fn [a]
+               (:name a)
+               )
+        years (fn [a]
+                (if (:birth-year a)
+                  (str " (" (:birth-year a) " - " (:death-year a) ")")
+                  )
+                )
+        ]
+
+    (str (name author) (years author))
+
+    )
+  )
 
 (defn authors->string [authors]
-  :-)
+  (apply str (interpose ", "(map author->string authors)))
+  )
+
 
 (defn book->string [book]
-  :-)
+  (str (:title book) ", written by " (authors->string (:authors book)))
+  )
 
 (defn books->string [books]
-  :-)
+  (let [string (fn [book] (if (book->string book)
+                            (book->string book)
+                            ) )]
+    (if (< 0 (count books))
+      (if (< 1 (count books))
+        (apply str (count books) " books. " (apply str (interpose ". "(map string books))) ".")
+        (apply str (count books) " book. " (apply str (map string books)) ".")
+        )
+      "No books."
+      )
+    )
+  )
 
 (defn books-by-author [author books]
   :-)
@@ -146,5 +198,6 @@
 
 (defn books-by-living-authors [books]
   :-)
+
 
 ; %________%

@@ -1,0 +1,27 @@
+[31mFAIL[0m "books->string" at (structured_data.clj:315)
+    Expected: "1 book. The City and the City, written by China Miéville (1972 - )."
+      Actual: "1 book. The City and the City, written by China Miéville (1972 - )"
+
+[31mFAIL[0m "books->string" at (structured_data.clj:317)
+    Expected: #"3 books. The Little Schemer, written by (Daniel Friedman \(1944 - \), Matthias Felleisen|Matthias Felleisen, Daniel Friedman \(1944 - \)). The City and the City, written by China Miéville \(1972 - \). Wild Seed, written by Octavia E. Butler \(1947 - 2006\)."
+      Actual: "3 books. The Little Schemer, written by Daniel Friedman (1944 - ), Matthias Felleisen. The City and the City, written by China Miéville (1972 - ). Wild Seed, written by Octavia E. Butler (1947 - 2006)"
+
+[31mFAIL[0m "books-by-author" at (structured_data.clj:322)
+Actual result did not agree with the checking function.
+        Actual result: :-
+    Checking function: (just [cities embassytown])
+--
+[31mFAIL[0m "books-by-author" at (structured_data.clj:323)
+Actual result did not agree with the checking function.
+        Actual result: :-
+    Checking function: (just [wild-seed])
+--
+[31mFAIL[0m "books-by-living-authors" at (structured_data.clj:348)
+Actual result did not agree with the checking function.
+        Actual result: :-
+    Checking function: (just #{cities embassytown little-schemer})
+--
+[31mFAIL[0m "books-by-living-authors" at (structured_data.clj:349)
+Actual result did not agree with the checking function.
+        Actual result: :-
+    Checking function: (just #{cities embassytown little-schemer silmarillion})
