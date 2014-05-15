@@ -43,8 +43,10 @@
     true
     false))
 
+;; Number -> Bool
 (defn not-teen? [age]
-  ":(")
+  (not (teen? age)))
+
 
 ;; Exercise 6
 ;; Write a function (generic-doublificate x) that takes one argument and
@@ -64,7 +66,22 @@
    (or (list? x) (vector? x)) (* 2 (count x))
    :else true))
 
+
+;; Number -> Bool
+;; Check leap years
+;; Exercise 8
+;; Write the function (leap-year? year), which returns true if year is a leap year, otherwise false. A year is a leap year if it is divisible by 4, except if it is divisible by 100, in which case it still is a leap year if it is divisible by 400.
+;; See Wikipedia for a simple pseudocode solution.
+;; (leap-year? 100) ;=> false
+;; (leap-year? 200) ;=> false
+;; (leap-year? 400) ;=> true
+;; (leap-year? 12)  ;=> true
+;; (leap-year? 20)  ;=> true
+;; (leap-year? 15)  ;=> false
 (defn leap-year? [year]
-  ":(")
+  (cond
+   (divides? 400 year) true
+   (divides? 100 year) false
+   (divides?   4 year) true))
 
 ; '_______'
