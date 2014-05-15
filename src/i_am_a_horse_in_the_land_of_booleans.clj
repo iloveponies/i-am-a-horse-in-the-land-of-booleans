@@ -37,7 +37,7 @@
    :else ""))
 
 ;; Number -> Bool
-
+;; Check if the age is in the teenager range
 (defn teen? [age]
   (if (and (>= age 13) (<= age 19))
     true
@@ -46,8 +46,23 @@
 (defn not-teen? [age]
   ":(")
 
+;; Exercise 6
+;; Write a function (generic-doublificate x) that takes one argument and
+;; doubles it if it is a number,
+;; returns nil if it is an empty collection,
+;; if it is a list or a vector, returns two times the length of it
+;; returns true otherwise.
+;; You can use the following functions:
+;; (number? n) returns true if n is a number.
+;; (empty? coll) returns true if coll is empty.
+;; (list? coll) and (vector? coll) test if coll is a list or a vector.
+;; (count coll) returns the length of a list or a vector.
 (defn generic-doublificate [x]
-  ":(")
+  (cond
+   (number? x) (* x 2)
+   (and (coll? x) (empty? x)) nil
+   (or (list? x) (vector? x)) (* 2 (count x))
+   :else true))
 
 (defn leap-year? [year]
   ":(")
