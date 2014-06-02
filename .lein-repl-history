@@ -1,0 +1,21 @@
+(use 'i-am-a-horse-in-the-land-of-booleans)
+(boolean "x")
+(boolean true))
+(boolean true)
+quit
+(use 'i-am-a-horse-in-the-land-of-booleans)
+(boolean "true")
+(boolean nil)
+(boolean false)
+(boolean true)
+(boolean [])
+(boolean "shit")
+quit
+(use 'i-am-a-horse-in-the-land-of-booleans)
+(generic-doublificate 1)
+(generic-doublificate 2)
+(generic-doublificate 3)
+(generic-doublificate [])
+(generic-doublificate '(65,21))
+(generic-doublificate [1 2])
+quit
