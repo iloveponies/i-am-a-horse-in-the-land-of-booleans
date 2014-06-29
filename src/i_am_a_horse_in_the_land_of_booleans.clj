@@ -38,7 +38,10 @@
   )
 
 (defn generic-doublificate [x]
-  ":(")
+  (cond
+   (number? n) (* x 2)
+   )
+  )
 
 (defn leap-year? [year]
   (cond
