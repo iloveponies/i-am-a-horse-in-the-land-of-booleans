@@ -21,7 +21,7 @@
     false))
 
 (defn not-teen? [age]
-  (not teen?))
+  (not (teen? age)))
 
 (defn generic-doublificate [x]
   ":(")
