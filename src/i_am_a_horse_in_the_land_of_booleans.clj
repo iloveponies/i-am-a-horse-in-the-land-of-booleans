@@ -15,16 +15,20 @@
    (divides? 15 n) "gotcha!"
    (divides? 3 n) "fizz"
    (divides? 5 n) "buzz"
-   :else "zero"))
+   :else ""))
 
 (defn teen? [age]
-  (< 13 age 19))
+  (<= 13 age 19))
 
 (defn not-teen? [age]
   ":(")
 
 (defn generic-doublificate [x]
-  ":(")
+  (cond
+   (number? x) (+ x x)
+   (and (coll? x) (empty? x)) nil
+   (or (list? x) (vector? x)) (* 2 (count x))
+   :else true))
 
 (defn leap-year? [year]
   ":(")
