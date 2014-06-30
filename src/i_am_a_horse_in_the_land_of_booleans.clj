@@ -49,6 +49,11 @@
   )
 
 (defn leap-year? [year]
-  ":(")
+  (cond
+   (and (divides? 4 year) (not (divides? 100 year))) true
+   (and (divides? 100 year) (divides? 400 year)) true
+   :else false
+   )
+)
 
 ; '_______'
