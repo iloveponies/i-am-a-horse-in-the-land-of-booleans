@@ -9,10 +9,12 @@
     "+")
   )
 
-(defn abs [x] )
+(defn abs [x]
+  (if (= (sign x) "-") (* -1 x) x)
+      )
 
 (defn divides? [divisor n]
-  ":(")
+  (if (= (mod n divisor) 0) true false))
 
 (defn fizzbuzz [n]
   ":(")
