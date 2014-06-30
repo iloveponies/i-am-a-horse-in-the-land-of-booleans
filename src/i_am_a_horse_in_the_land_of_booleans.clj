@@ -1,11 +1,15 @@
 (ns i-am-a-horse-in-the-land-of-booleans
   (:refer-clojure :exclude [boolean]))
 
-(defn boolean [x]
-  ":(")
+(defn boolean [x] (if (= x nil) false (if (= x false) false true )))
 
-(defn abs [x]
-  ":(")
+(defn sign [x]
+  (if (< x 0)
+    "-"
+    "+")
+  )
+
+(defn abs [x] )
 
 (defn divides? [divisor n]
   ":(")
@@ -13,8 +17,7 @@
 (defn fizzbuzz [n]
   ":(")
 
-(defn teen? [age]
-  ":(")
+(defn teen? [age] (if (< 12 age 20) true false))
 
 (defn not-teen? [age]
   ":(")
