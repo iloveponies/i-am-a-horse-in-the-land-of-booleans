@@ -28,12 +28,18 @@
 (defn teen? [age] (if (< 12 age 20) true false))
 
 (defn not-teen? [age]
-  ":(")
+  (if
+     (or (< age 13 ) (> age 19))
+     true
+     false
+     )
+  )
+
 
 (defn generic-doublificate [x]
   (cond
 
-   (number? x) (* 2 x)
+   (number? x) (* 2        x)
    (empty?  x) nil
    (list?   x) (* 2 (count x))
    (vector? x) (* 2 (count x))
