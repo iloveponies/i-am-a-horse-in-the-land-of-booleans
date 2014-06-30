@@ -39,7 +39,12 @@
 
 (defn generic-doublificate [x]
   (cond
-   (number? n) (* x 2)
+   (number? x) (* x 2)
+   (empty? x) nil
+   (or (list? x) (vector? x)) (* 2 (count x) )
+   :else true
+
+
    )
   )
 
