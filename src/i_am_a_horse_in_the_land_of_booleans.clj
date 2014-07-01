@@ -19,9 +19,9 @@
 
 (defn fizzbuzz [n]
   (cond
-   (== 0 (mod n 15)) "gotcha!"
-   (== 0 (mod n 3)) "fizz"
-   (== 0 (mod n 5)) "buzz"
+   (divides? 15 n) "gotcha!"
+   (divides? 3 n) "fizz"
+   (divides? 5 n) "buzz"
    :else "")
   )
 
@@ -42,8 +42,10 @@
 
 (defn leap-year? [year]
   (cond
-   (== 0 (mod year 400)) true
-   (and (not(== 0 (mod year 100))) (== 0 (mod year 4))) true
+   (divides? 400 year) true
+   (and
+    (not (divides? 100 year))
+    (divides? 4 year)) true
    :else false
    )
   )
