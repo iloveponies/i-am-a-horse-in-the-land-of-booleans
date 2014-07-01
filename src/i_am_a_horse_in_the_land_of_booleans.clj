@@ -37,6 +37,12 @@
    :else true))
 
 (defn leap-year? [year]
-  ":(")
+  (if (and (number? year)
+           (= 0 (mod year 4))
+           (or (not (= 0 (mod year 100)))
+               (= 0 (mod year 400))))
+    true
+    false))
+
 
 ; '_______'
