@@ -86,11 +86,3 @@
 (leap-year? 20)  ;=> true
 (leap-year? 15)  ;=> false
 
-
-
-(cond
-    (divides? 400 100) true
- :else false)
-
-
-
