@@ -29,7 +29,7 @@
     false))
 
 (defn not-teen? [age]
-  ":(")
+  (not (teen? age)))
 
 (defn generic-doublificate [x]
   (cond
@@ -40,31 +40,13 @@
 
 
 (defn leap-year? [year]
-  ":(")
+  (if (divides? 100 year)
+    (if (divides? 400 year)
+      true
+      false)
+    (if (divides? 4 year)
+      true
+      false)))
 
 ; '_______'
 
-
-(boolean "afas")
-(teen? 12) ;=> false
-(teen? 13) ;=> true
-(teen? 15) ;=> true
-(teen? 19) ;=> true
-(teen? 20) ;=> false
-(teen? 27) ;=> false
-(abs -2) ;=> 2
-(abs 42) ;=> 42
-(divides? 2 4) ;=> true
-(divides? 4 2) ;=> false
-(divides? 5 10) ;=> true
-(divides? 2 5) ;=> false
-(fizzbuzz 2)  ;=> ""
-(fizzbuzz 45) ;=> "gotcha!"
-(fizzbuzz 48) ;=> "fizz"
-(fizzbuzz 70) ;=> "buzz"
-(generic-doublificate 1)        ;=> 2
-(generic-doublificate [1 2])    ;=> 4
-(generic-doublificate '(65 21)) ;=> 4
-(generic-doublificate {})       ;=> nil
-(generic-doublificate [])       ;=> nil
-(generic-doublificate {:a 1})   ;=> true
