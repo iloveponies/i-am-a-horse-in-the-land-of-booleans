@@ -21,16 +21,25 @@
 
 (defn teen? [age]
   (if
-   (and (< age 20) (> age 12)) true 
+   (and (< age 20) (> age 12)) true
    false))
 
 (defn not-teen? [age]
   (if (teen? age) false true))
 
 (defn generic-doublificate [x]
-  ":(")
+  (cond
+   (number? x) (* x 2)
+   (empty? x) nil
+   (or (list? x) (vector? x)) (* 2 (count x))
+   :else true
+   ))
 
 (defn leap-year? [year]
-  ":(")
+  (cond
+   (= 0 (mod year 400)) true
+   (= 0 (mod year 100)) false
+   (= 0 (mod year 4)) true
+   :else false))
 
 ; '_______'
