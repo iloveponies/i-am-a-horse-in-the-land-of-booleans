@@ -21,8 +21,11 @@
   ":(")
 
 
+;; returns truthy if age is at least 13 and at most 19.
+;; Use only one comparison operator and give it three arguments.
+
 (defn teen? [age]
-  ":(")
+  (<= 13 age 19))
 
 
 (defn not-teen? [age]
