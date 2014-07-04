@@ -25,8 +25,17 @@
     false))
 
 
+;; "fizz" when n is divisible by 3,
+;; "buzz" when n is divisible by 5,
+;; "gotcha!" when n is divisible by 15, and
+;; the empty string "" otherwise.
+
 (defn fizzbuzz [n]
-  ":(")
+  (cond
+   (= (mod n 15) 0) "gotcha!"
+   (= (mod n 5) 0) "buzz"
+   (= (mod n 3) 0) "fizz"
+   :else ""))
 
 
 ;; returns truthy if age is at least 13 and at most 19.
