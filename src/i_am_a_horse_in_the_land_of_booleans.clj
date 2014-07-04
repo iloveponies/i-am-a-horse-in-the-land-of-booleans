@@ -17,8 +17,12 @@
    x))
 
 
+;; returns true if divisor divides n and false otherwise
+
 (defn divides? [divisor n]
-  ":(")
+  (if (= (mod n divisor) 0)
+    true
+    false))
 
 
 (defn fizzbuzz [n]
