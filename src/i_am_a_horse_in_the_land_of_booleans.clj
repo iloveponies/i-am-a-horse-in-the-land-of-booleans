@@ -46,7 +46,7 @@
 
 
 (defn not-teen? [age]
-  ":(")
+  (not (teen? age)))
 
 ;; doubles it if it is a number,
 ;; returns nil if it is an empty collection,
@@ -66,11 +66,21 @@
    :else true))
 
 
+
+;; if year is not divisible by 4 then common year
+;; else if year is not divisible by 100 then leap year
+;; else if year is not divisible by 400 then common year
+
 (defn leap-year? [year]
-  ":(")
+  (if (= (mod year 4) 0)
+    (if (= (mod year 100) 0)
+      (if (= (mod year 400) 0)
+        true
+        false)
+      true)
+    false))
 
 
-; '_______'
 
 
 
