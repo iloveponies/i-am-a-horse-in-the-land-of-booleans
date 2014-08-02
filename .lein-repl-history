@@ -1,0 +1,7 @@
+(use 'i-am-a-horse-in-the-land-of-booleans)
+(use 'i-am-a-horse-in-the-land-of-booleans :reload)
+(leap-year? 200)
+(divides? 100 200)
+(divides? 400 200)
+(divides? 4 200)
+(. System exit 0)
