@@ -12,7 +12,7 @@
 (boolean :aKey)
 
 
-(abs 144/64)
+(abs -144/64)
 
 (teen? 19)
 
@@ -20,4 +20,34 @@
   (if (< x 0)
     "-"
     "+"))
+
+(sign (- 12 34))
+
+(def z 34)
+
+(defn divides2? [divisor n]
+  (== (mod n divisor) 0))
+
+(divides? 30 30)
+
+(= 0(mod 30 3) )
+
+(defn fb [x]
+  (cond
+   (divides? 15 x) "gotcha"
+   (divides? 3 x) "fizz"
+   (divides? 5 x) "buzz"
+   :else ""
+   ))
+
+(fb 70)
+
+
+
+
+
+
+
+
+
 
