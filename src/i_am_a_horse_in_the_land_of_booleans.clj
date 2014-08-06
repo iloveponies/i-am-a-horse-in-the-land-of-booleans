@@ -2,9 +2,10 @@
   (:refer-clojure :exclude [boolean]))
 
 (defn boolean [x]
+  "This returns falsey for nil and false and truthy for all else"
   (and
   true
-  ( not (not x) )
+  ( not (not x) )  ; Makes sure we are only comparing boolean values, so only bools returned
   ))
 
 (defn abs [x]
