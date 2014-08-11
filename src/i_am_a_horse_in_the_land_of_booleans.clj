@@ -21,7 +21,7 @@
   )
 
 (defn teen? [age]
-  (if (>= age 13) true false)
+  (if (>= age 13) (if (<= age 19 ) true false) false)
   )
 
 (defn not-teen? [age]
@@ -48,8 +48,13 @@
   )
 
 (defn boolean [x]
+  (if x true false)
+  )
+
+(defn Aboolean [x]
 
   (if (= x false) (false)
+
     (if (= x nil) false
       (true)))
 )
