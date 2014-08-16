@@ -34,7 +34,6 @@
   (cond
    (not (divides? 4 year))   false
    (not (divides? 100 year)) true
-   (not (divides? 400 year)) false
-   :else                     true))
+   :else                     (divides? 400 year)))
 
 ; '_______'
