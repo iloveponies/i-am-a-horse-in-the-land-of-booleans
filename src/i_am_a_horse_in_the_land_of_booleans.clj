@@ -46,10 +46,10 @@
   "2x if number, nil if empty coll, 2x if full list or vector, else true"
   [x]
   (cond
-   (number? x) (* 2 x)
-   (and (coll? x) (empty? x) ) nil
-   (or (list? x) (vector? x) ) (* 2 (count x) )
-   :else
+   (number? x) (* 2 x)                           ; Condition 1
+   (and (coll? x) (empty? x) ) nil               ; Condition 2
+   (or (list? x) (vector? x) ) (* 2 (count x) )  ; Condition 3
+   :else                                         ; Else true
    true
    ) )
 
