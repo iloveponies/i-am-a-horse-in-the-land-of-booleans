@@ -56,7 +56,17 @@
    true
    ) )
 
-(defn leap-year? [year]
-  ":(")
+(defn leap-year?
+  "Leap year is /4 unless divisible by 100 unless / 400"
+  [year]
+  ( cond
+    (== 0 (mod year 100) ) (== 0 (mod year 400) )   ; If div100, check to see if div400
+    (== 0 (mod year 4) ) true                       ; If div 4 is leap year since others are taken care of
+    :else                                           ; Otherwise not a leap year
+    false
+    )
+
+
+  )
 
 ; '_______'
