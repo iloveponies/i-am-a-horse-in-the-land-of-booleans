@@ -12,9 +12,9 @@
   abs
   "Returns the absolute value of x"
   [x]
-  (if (< x 0)
-    (* -1 x)
-    x )
+  (if (< x 0)                         ; If x < 0
+    (* -1 x)                          ; Return neg of neg value
+    x )                               ; Otherwise just return x
   )
 
 (defn divides?
@@ -28,10 +28,10 @@
   "Returns 'fuzz' when /3, 'buzz' when /5 'gotcha' /15 and '' otherwise"
   [n]
   (cond
-   (divides? 15 n) "gotcha!"           ; This is like an elseif, not ifs.
+   (divides? 15 n) "gotcha!"           ; This is like an elsif, not ifs.
    (divides? 5  n) "buzz"
    (divides? 3  n) "fizz"
-   :else           ""  ) )
+   :else           ""  ) )             ; final else
 
 (defn
   teen?
@@ -42,8 +42,16 @@
 (defn not-teen? [age]
   ":(")
 
-(defn generic-doublificate [x]
-  ":(")
+(defn generic-doublificate
+  "2x if number, nil if empty coll, 2x if full list or vector, else true"
+  [x]
+  (cond
+   (number? x) (* 2 x)
+   (and (coll? x) (empty? x) ) nil
+   (or (list? x) (vector? x) ) (* 2 (count x) )
+   :else
+   true
+   ) )
 
 (defn leap-year? [year]
   ":(")
