@@ -39,8 +39,11 @@
   [age]
   ( >= 19 age 13 ) )
 
-(defn not-teen? [age]
-  ":(")
+(defn not-teen?
+  "Returns the opposite of teen?"
+  [age]
+  (not (teen? age) )
+  )
 
 (defn generic-doublificate
   "2x if number, nil if empty coll, 2x if full list or vector, else true"
