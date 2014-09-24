@@ -2,19 +2,19 @@
   (:refer-clojure :exclude [boolean]))
 
 (defn boolean [x]
-  ":(")
+  (if x true false))
 
 (defn abs [x]
-  ":(")
+  (if (neg? x) (- x) x))
 
 (defn divides? [divisor n]
-  ":(")
+  (zero? (mod n divisor)))
 
 (defn fizzbuzz [n]
   ":(")
 
 (defn teen? [age]
-  ":(")
+  (<= 13 age 19))
 
 (defn not-teen? [age]
   ":(")
