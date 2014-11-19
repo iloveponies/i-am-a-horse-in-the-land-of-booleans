@@ -1,7 +1,7 @@
 (ns i-am-a-horse-in-the-land-of-booleans
   (:refer-clojure :exclude [boolean]))
 
-(defn boolean [x]
+(defn boolean [x] 
   (if x true false))
 
 (defn abs [x]
