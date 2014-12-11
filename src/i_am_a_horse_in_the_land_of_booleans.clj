@@ -1,7 +1,9 @@
 (ns i-am-a-horse-in-the-land-of-booleans)
 
 (defn boolean [x]
-  (if (or (= false x) (= nil x))
+  (if (or
+        (= false x)
+        (= nil x))
     false
     true))
 
@@ -27,8 +29,20 @@
     true
     false))
 
+; (defn teen? [age]
+;   (<= 13 age 19))
+
+
 (defn not-teen? [age]
   (not (teen? age)))
+
+; (defn not-teen? [age]
+;   (or
+;     (not
+;       (and
+;         (>= age 13)
+;         (<= age 19)))
+;     false))
 
 (defn generic-doublificate [n]
   (cond
