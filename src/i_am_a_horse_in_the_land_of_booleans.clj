@@ -7,7 +7,9 @@
     false))
 
 (defn abs [x]
-  ":(")
+  (if (< x 0)
+      (* x -1)
+      x))
 
 (defn divides? [divisor n]
   ":(")
