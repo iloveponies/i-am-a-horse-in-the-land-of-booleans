@@ -11,7 +11,7 @@
   (if (<= x 0) (* x -1) x))
 
 (defn divides? [divisor n]
-  (if(= 0 (mod n divisor)) true false))
+  (= 0 (mod n divisor)))
 
 (defn fizzbuzz [n]
   (cond
