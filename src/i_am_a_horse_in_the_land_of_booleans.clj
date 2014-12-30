@@ -25,7 +25,7 @@
   (>= 19 age 13 ))
 
 (defn not-teen? [age]
-  ":(")
+  (not (teen? age)))
 
 (defn generic-doublificate [x]
   (cond
