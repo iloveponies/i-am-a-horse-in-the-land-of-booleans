@@ -8,3 +8,7 @@ pom.xml
 .lein-deps-sum
 .lein-failures
 .lein-plugins
+.idea/
+.lein-repl-history
+.nrepl-port
+i_am_a_horse_in_the_land_of_booleans.iml
