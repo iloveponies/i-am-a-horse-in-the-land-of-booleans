@@ -7,7 +7,7 @@
 (defn abs [x]
   (if (< x 0)
     (* -1 x)
-    (x)))
+    x))
 
 (defn divides? [divisor n]
   (= (mod n divisor) 0))
@@ -26,7 +26,7 @@
 
 (defn generic-doublificate [x]
   (cond (number? x) (* 2 x)
-        (empty? x) true
+        (empty? x) nil
         (or (list? x) (vector? x))
             (* 2 (count x))
         :else true))
