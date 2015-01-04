@@ -23,7 +23,7 @@
   (<= 13 age 19))
 
 (defn not-teen? [age]
-  ":(")
+  (not (teen? age)))
 
 (defn list-or-vector? [x]
   (or (list?   x) (vector? x)))
