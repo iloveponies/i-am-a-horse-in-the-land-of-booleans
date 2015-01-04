@@ -14,7 +14,7 @@
   ":(")
 
 (defn teen? [age]
-  ":(")
+  (<= 13 age 19))
 
 (defn not-teen? [age]
   ":(")
@@ -25,7 +25,5 @@
 (defn leap-year? [year]
   ":(")
 
-(i-am-a-horse-in-the-land-of-booleans/abs 22)
-
-
+;(i-am-a-horse-in-the-land-of-booleans/teen? 20)
 ; '_______'
