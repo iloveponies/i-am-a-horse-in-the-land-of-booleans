@@ -2,10 +2,10 @@
   (:refer-clojure :exclude [boolean]))
 
 (defn boolean [x]
-  ":(")
+  (if x true false))
 
 (defn abs [x]
-  ":(")
+  ":()()")
 
 (defn divides? [divisor n]
   ":(")
@@ -24,5 +24,8 @@
 
 (defn leap-year? [year]
   ":(")
+
+(i-am-a-horse-in-the-land-of-booleans/abs 22)
+
 
 ; '_______'
