@@ -1,0 +1,45 @@
+;; Anything you type in here will be executed
+;; immediately with the results shown on the
+;; right.
+(if "foo" "truthey" "falsey")
+
+(boolean nil)
+
+(defn
+  isBool
+  [val]
+  (if val true false))
+
+(isBool nil)
+
+  (= "foo" "foo")
+
+  (== 42.0 42)
+
+  (defn
+    teen?
+    [val]
+    (if (< 12 val 20) true false))
+
+  (teen? 27)
+
+  (defn
+    sign
+    [x]
+    (if (< x 0) "-" "+"))
+
+  (sign 0)
+
+  (defn
+    abs
+    [val]
+    (if (< val 0) (/ val -1) val))
+
+  (abs -2)
+
+  (defn
+    divides?
+    [val1 val2]
+    (if (= (mod val2 val1) 0) true false))
+
+  (divides? 4 20)
