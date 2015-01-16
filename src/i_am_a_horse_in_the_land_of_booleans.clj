@@ -10,13 +10,13 @@
   	x))
 
 (defn divides? [divisor n]
-  (zero? (mod n divisor))
+  (zero? (mod n divisor)))
 
 (defn fizzbuzz [n]
   (cond
+    (zero? (mod n 15)) "gotcha!"
+    (zero? (mod n 5))  "buzz"
   	(zero? (mod n 3))  "fizz"
-  	(zero? (mod n 5))  "buzz"
-  	(zero? (mod n 15)) "gotcha!"
   	:else              ""))
 
 (defn teen? [age]
@@ -34,8 +34,9 @@
 		:else true))
 
 (defn leap-year? [year]
-  (or 
-    (and (zero? (mod year 4)) (> (mod year 100) 0)) 
-    (and (zero? (mod year 400)) (> (mod year 100) 0))))
-
+  (cond
+     (= (mod year 400) 0) true
+     (= (mod year 100) 0) false
+     (= (mod year 4) 0) true
+     :else false))
 ; '_______'
