@@ -36,6 +36,6 @@
 (defn leap-year? [year]
   (or 
     (and (zero? (mod year 4)) (> (mod year 100) 0)) 
-    (and (zero? (mod year 400)) (>= (mod year 100) 0))))
+    (and (zero? (mod year 400)) (> (mod year 100) 0))))
 
 ; '_______'
