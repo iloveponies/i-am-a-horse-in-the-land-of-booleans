@@ -9,7 +9,7 @@
   )
 
 (defn divides? [divisor n]
-  (if (mod divisor n) true false))
+  (if (== (mod n divisor) 0) true false))
 
 (defn fizzbuzz [n]
   (cond
@@ -24,17 +24,25 @@
   )
 
 (defn not-teen? [age]
-  ":(")
+  (not (teen? age))
+  )
 
 (defn generic-doublificate [x]
   (cond
-   (number? x) (* x x)
+   (number? x) (* 2 x)
    (empty? x) nil
    (or (list? x) (vector? x)) (* 2 (count x))
    :else true)
   )
 
 (defn leap-year? [year]
-  ":(")
+  (cond
+    (divides? 100 year)
+      (if (divides? 400 year) true false)
+    (divides? 4 year) true
+   :else false
+  )
+  )
+
 
 ; '_______'
