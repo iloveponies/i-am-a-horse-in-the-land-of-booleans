@@ -1,11 +1,9 @@
 (ns i-am-a-horse-in-the-land-of-booleans
   (:refer-clojure :exclude [boolean]))
 
-(defn boolean [x]
-  ":(")
+(defn boolean [x] (if x true false))
 
-(defn abs [x]
-  ":(")
+(defn abs [x] (if (> x 0) x (* x -1)))
 
 (defn divides? [divisor n]
   ":(")
