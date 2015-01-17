@@ -5,10 +5,13 @@
   (if x true false))
 
 (defn abs [x]
-  ":(")
+  (if (< x 0) (* x -1) x))
 
 (defn divides? [divisor n]
-  ":(")
+  (if (= (mod divisor n) 0)
+    false
+    true)
+  )
 
 (defn fizzbuzz [n]
   ":(")
