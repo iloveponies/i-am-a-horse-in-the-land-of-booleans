@@ -48,6 +48,3 @@
                             false)
       :else true)
     :else false))
-; '_______'
-
-; 13 < age < 20
