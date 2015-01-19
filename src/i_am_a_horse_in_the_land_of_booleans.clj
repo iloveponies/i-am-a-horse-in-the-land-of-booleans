@@ -38,7 +38,17 @@
    (or (list? x) (vector? x)) (* (count x) 2)
    :else true))
 
+(defn non-leap-year? [year]
+  (cond
+   (not (divides? 4 year)) true
+   (not (divides? 100 year)) false
+   (not (divides? 400 year)) true
+   :else false
+   ))
+
 (defn leap-year? [year]
-  ":(")
+  (not (non-leap-year? year)))
+
+
 
 ; '_______'
