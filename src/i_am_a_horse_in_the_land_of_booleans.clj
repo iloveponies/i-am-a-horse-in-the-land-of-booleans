@@ -12,7 +12,9 @@
 ; (abs -1)
 
 (defn divides? [divisor n]
-  (if (= (mod n divisor) 0) true false ) )
+  ; (if
+    (= (mod n divisor) 0) )
+    ; true false ) )
 
 ; (divides? 5 15)
 
