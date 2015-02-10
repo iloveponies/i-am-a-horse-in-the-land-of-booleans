@@ -1,0 +1,88 @@
+(boolean "") 
+(boolean nil) 
+(boolean []) 
+(doc or)
+(user/clojuredocs or)
+(defn boolean [x]
+  (if (or (= x false) (= x nil))
+    false
+    true))
+(defn boolean2 [x]
+  (if (or (= x false) (= x nil))
+    false
+    true))
+(boolean2 nil)
+(boolean2 false)
+(boolean2 [])
+(defn teen? [age]
+  (and (<= age 13) (>= age 19)))
+(teen? 12)
+(teen? 13)
+(defn teen? [age]
+  (and (>= age 13) (<= age 19)))
+(teen? 13)
+(teen? 12)
+(teen? 19)
+(teen? 14)
+(teen? 20)
+(* 79 5.11)
+(* 79 5.41)
+(defn abs [x]
+  (if (< n 0)
+    -n
+    n))
+(defn abs [x]
+  (if (< x 0)
+    -x
+    x))
+(defn abs [x]
+  (if (< x 0)
+    (- 0 x)
+    x))
+(abs 5)
+(abs -5)
+(defn abs2 [x]
+  (if (< x 0)
+    (- 0 x)
+    x))
+(abs2 -5)
+(abs2 2)
+(abs2 234)
+(abs2 -234)
+(- 0 2)
+(defn divides? [divisor n]
+  (if (= (mod n divisor) 0)
+    true
+    false))
+(divides? 8 2)
+(divides? 2 8)
+(divides? 3 8)
+(defn generic-doublificate [x]
+  (cond
+    (number? x) (* x 2)
+    (empty? x) nil
+    (or (list? x) (vector? x)) (* 2 (count x))
+    :else true))
+(generic-doublificate [])
+(generic-doublificate [1 2])
+(generic-doublificate '(1 2))
+(generic-doublificate 21)
+(generic-doublificate "aa")
+(defn not-teen? [age]
+  (not teen? age))
+(not-teen? 12)
+(defn not-teen? [age]
+  (not (teen? age)))
+(not-teen? 12)
+(not-teen? 13)
+(defn leap-year? [year]
+  (cond
+    (and (divides? 4 year) (not (divides? 100 year))) true
+    (divides? 400 year) true
+    :else false ))
+(leap-year? 100)
+(leap-year? 200)
+(leap-year? 400)
+(leap-year? 12)
+(leap-year? 20)
+(leap-year? 15)
