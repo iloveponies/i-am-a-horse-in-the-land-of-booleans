@@ -4,4 +4,4 @@ I'm part of the [120 hour epic sax marathon](http://iloveponies.github.com/120-h
 
 ## Usage
 
-Tehtävät 42/42 tehty.
+Tehtävät 8/8 tehty.
