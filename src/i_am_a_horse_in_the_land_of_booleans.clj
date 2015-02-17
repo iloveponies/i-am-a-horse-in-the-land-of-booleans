@@ -38,17 +38,3 @@
    :else false))
 
 ; '_______'
-
-
-
-(generic-doublificate {:a 1})   ;=> true
-
-
-
-
-
-
-
-
-
-
