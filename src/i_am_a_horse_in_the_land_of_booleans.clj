@@ -12,7 +12,11 @@
   (= (mod n divisor) 0))
 
 (defn fizzbuzz [n]
-  ":(")
+  (cond
+    (mod n 15) "gotcha!"
+    (mod n 5)  "buzz"
+    (mod n 3)  "fizz"
+    true ""))
 
 (defn teen? [age]
   (< 12 age 20))
@@ -25,17 +29,3 @@
 
 (defn leap-year? [year]
   ":(")
-
-; '_______'
-
-
-
-
-
-
-
-
-
-
-
-
