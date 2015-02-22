@@ -22,10 +22,15 @@
   (< 12 age 20))
 
 (defn not-teen? [age]
-  ";<")
+  (not (teen? age)))
 
- (defn generic-doublificate [x]
-  ":(")
+(defn generic-doublificate [x]
+   (cond
+     (number? x) (* 2 x)
+     (empty? x) nil
+     (or (list? x)
+         (vector? x)) (* 2 (count x))
+      true true))
 
 (defn leap-year? [year]
   ":(")
