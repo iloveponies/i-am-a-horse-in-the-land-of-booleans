@@ -13,9 +13,9 @@
 
 (defn fizzbuzz [n]
   (cond
-    (mod n 15) "gotcha!"
-    (mod n 5)  "buzz"
-    (mod n 3)  "fizz"
+    (= (mod n 15) 0) "gotcha!"
+    (= (mod n 5)  0)  "buzz"
+    (= (mod n 3)  0)  "fizz"
     true ""))
 
 (defn teen? [age]
@@ -33,4 +33,9 @@
       true true))
 
 (defn leap-year? [year]
-  ":(")
+  (or (and (= (mod year 4) 0)
+           (> (mod year 100) 0))
+      (and (= (mod year 4) 0)
+           (= (mod year 100) 0)
+           (= (mod year 400) 0))))
+
