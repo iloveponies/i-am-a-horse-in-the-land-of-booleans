@@ -19,7 +19,7 @@
    ))
 
 (defn teen? [age]
-  (if (< 12 age 20) true false))
+  (if (<= 13 age 19) true false))
 
 (defn not-teen? [age]
   (not (teen? age)))
@@ -31,9 +31,14 @@
    (list? x) (* 2 (count x))
    (vector? x) (* 2 (count x))
    :else true
-   ))
+  )
+)
 
-(defn leap-year? [year]
-  (if (and
-       (divides? 4 year)
-       (or (and (divides? 400 year) (divides? 100 year)) (not (divides? 100 year)))) true false))
+(defn leap-year? [x]
+  (cond
+   (not (divides? 4 x)) false
+   (not (divides? 100 x)) true
+   (not (divides? 400 x)) false
+   :else true
+   )
+  )
