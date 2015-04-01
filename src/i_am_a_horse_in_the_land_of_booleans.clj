@@ -34,8 +34,8 @@
   (cond
    (number? x) (* x 2)
    (empty? x) nil
-   (list? x) (count x)
-   (vector? x) (count x)
+   (list? x) (* (count x) 2)
+   (vector? x) (* (count x) 2)
    :else true))
 
 (defn leap-year? [year]
