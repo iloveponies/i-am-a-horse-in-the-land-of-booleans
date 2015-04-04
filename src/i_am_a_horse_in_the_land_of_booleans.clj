@@ -1,8 +1,11 @@
 (ns i-am-a-horse-in-the-land-of-booleans
   (:refer-clojure :exclude [boolean]))
 
+
+
 (defn boolean [x]
-  ":(")
+  (if (== :false x ) "false" "true" ))
+ 
 
 (defn abs [x]
   ":(")
