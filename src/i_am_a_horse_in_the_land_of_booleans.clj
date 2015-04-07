@@ -46,11 +46,18 @@
     (number? x) (* 2 x)
   	(empty? x) nil
   	(list? x) (* 2 (count x))
+   	(vector? x) (* 2 (count x))
   	:else true 
   )
  )
 
 (defn leap-year? [year]
-  ":(")
+  (cond
+    (= 0 (mod year 400)) true
+    (= 0 (mod year 100)) false
+    (= 0 (mod year 4)) true
+    :else false
+    )
+  )
 
 ; '_______'
