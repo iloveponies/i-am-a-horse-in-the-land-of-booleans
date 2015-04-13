@@ -27,7 +27,7 @@
   (<= 13 age 19))
 
 (defn not-teen? [age]
-  (if (or (< age 13 )(> age  20))
+  (if (or (< age 13 )(> age  19))
     true
     false))
 
