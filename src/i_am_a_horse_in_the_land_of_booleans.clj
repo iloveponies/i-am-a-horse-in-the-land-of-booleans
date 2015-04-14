@@ -31,8 +31,10 @@
 (defn generic-doublificate [x]
   (cond
     (number? x) (* x 2)
-    (and (empty? x) (or (list? x) (vector? x))) nil
-    (and (not (empty? x)) (or (list? x) (vector? x))) (* 2 (count x))))
+    (and (empty? x) (or (list? x) (vector? x) (map? x))) nil
+    (and (not (empty? x)) (or (list? x) (vector? x))) (* 2 (count x))
+    ;(and (not (empty? x)) (map? x)) (count (keys x))
+    true true))
 
 (defn leap-year? [year]
   (cond
@@ -44,3 +46,9 @@
 
 ; '_______'
 
+(generic-doublificate 1)        ;=> 2
+(generic-doublificate [1 2])    ;=> 4
+(generic-doublificate '(65 21)) ;=> 4
+(generic-doublificate {})       ;=> nil
+(generic-doublificate [])       ;=> nil
+(generic-doublificate {:a 1})   ;=> true
