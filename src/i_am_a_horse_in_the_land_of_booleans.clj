@@ -8,7 +8,7 @@
   ":(")
 
 (defn divides? [divisor n]
-  ":(")
+  (== (mod n divisor) 0))
 
 (defn fizzbuzz [n]
   ":(")
