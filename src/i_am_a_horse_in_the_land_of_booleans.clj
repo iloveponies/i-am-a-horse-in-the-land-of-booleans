@@ -5,7 +5,9 @@
   (if x true false))
 
 (defn abs [x]
-  ":(")
+  (cond
+   (>= x 0) x
+    :else (* -1 x)))
 
 (defn divides? [divisor n]
   (== (mod n divisor) 0))
