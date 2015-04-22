@@ -29,7 +29,7 @@
   (<= 13 age 19))
 
 (defn not-teen? [age]
-  ":(")
+  (and (not (teen? age)) true))
 
 (defn generic-doublificate [x]
   (cond
