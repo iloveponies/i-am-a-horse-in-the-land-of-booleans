@@ -1,0 +1,26 @@
+(boolean false)
+((fn [age] (< 13 age)) 14)
+((fn [age] (< 13 age)) 12)
+(defn abs [x]
+ (if (< x 0) -x x))
+(defn abs [x]
+ (if (< x 0) (-x) x))
+ (if (< x 0) (- x) x))
+(defn abs [x]
+ (if (< x 0) (- x) x))
+abs -3
+abs 3
+abs -2
+abs 2
+abs -12
+(mod 10 2)
+(mod 10 3)
+(not mod 10 3)
+(not (mod 10 3))
+(not (mod 10 2))
+(not 1)
+(not 0)
+(not false)
+(not true)
+(not 0)
+(not 1)
