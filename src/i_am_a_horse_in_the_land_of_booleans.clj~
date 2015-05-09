@@ -23,6 +23,6 @@
   (cond (number? x) (* x 2) (empty? x) nil (list? x) (* (count x) 2) (vector? x) (* (count x) 2) :else true))
 
 (defn leap-year? [year]
-  (and (divides? 4 year) (or (not (divides? 100 year)) (divides? 400 year))))
+  (and (divides? 4 year) (not (divides? 100))))
 
 ; '_______'
