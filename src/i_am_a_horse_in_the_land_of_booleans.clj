@@ -35,7 +35,7 @@
   (if (divides? 4 year)
     (if (divides? 100 year)
       (divides? 400 year)
-      (divides? 4 year))
+      true)
     false))
 
 ; '_______'
