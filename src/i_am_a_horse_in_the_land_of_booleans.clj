@@ -59,12 +59,13 @@
   (let [div100? (divides? 100 year)
         div400? (divides? 400 year)]
     (cond
-      (and div100? (not div400?)) false
+      div400? true
+      div100? false
       (divides? 4 year) true
-      (and div100? div400?) true
-      :else false)))
+      :else false)
+))
       
 
-(leap-year? 100)
+
 
 ; '_______'
