@@ -12,9 +12,9 @@
 
 (defn fizzbuzz [n]
   (cond 
-  	(divides? 3 n) "fizz"
-  	(divides? 5 n) "buzz"
   	(divides? 15 n) "gotcha!"
+  	(divides? 5 n) "buzz"
+  	(divides? 3 n) "fizz"
   	:else ""))
 
 (defn teen? [age]
@@ -33,7 +33,7 @@
 (defn leap-year? [year]
   (cond 
   	(= (mod year 400) 0) true
-  	(and (= (mod year 4) 0) (not (= (mod 100) 0))) true
+  	(and (= (mod year 4) 0) (not (= (mod year 100) 0))) true
   	:else false))
 
 ; '_______'
