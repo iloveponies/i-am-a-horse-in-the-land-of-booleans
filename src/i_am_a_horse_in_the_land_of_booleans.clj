@@ -13,10 +13,11 @@
    )
 )
 
+
 (defn divides? [divisor n]
- (if (< (mod divisor n) 1)
-    false
-   true
+ (if (== (mod n divisor) 0)
+    true
+   false
    )
 )
 
@@ -50,17 +51,9 @@
   )
 
 (defn leap-year? [year]
-  (cond
-   (mod year 4) true
-   (mod year 400) true
-   :else false
-   ))
-
-(defn leap-year2? [year]
-  (if (and (== (mod year 4) 0) (<= (mod year 400)21))
-    true
-   false
-   )
-)
+  (cond (zero? (mod year 400)) true
+        (zero? (mod year 100)) false
+        (zero? (mod year 4)) true
+        :default false))
 
 ; '_______'
