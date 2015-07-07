@@ -50,6 +50,17 @@
   )
 
 (defn leap-year? [year]
-  ":(")
+  (cond
+   (mod year 4) true
+   (mod year 400) true
+   :else false
+   ))
+
+(defn leap-year2? [year]
+  (if (and (== (mod year 4) 0) (<= (mod year 400)21))
+    true
+   false
+   )
+)
 
 ; '_______'
