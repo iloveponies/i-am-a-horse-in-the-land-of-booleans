@@ -9,8 +9,8 @@
 ;(boolean (+ 2 3)) ;=> true
 ;(boolean true) ;=> true
 ;(boolean false) ;=> false
-(defn boolean [x]
- (if (= x true) true (if (= x false) false true)))
+(defn boolean [x] 
+  (if (= x true) true (if (= x false) false (if (= x nil) false true))))
 
 ;Exercise 3
 ;Write the function (abs n), which returns the absolute value of n, i.e. if n<0, 
@@ -55,8 +55,9 @@
 ;(teen? 19) ;=> true
 ;(teen? 20) ;=> false
 ;(teen? 27) ;=> false
-(defn teen? [age]
-  ":(")
+ (defn teen? [age]  
+   (> 20 age 12))
+
 
 ;Exercise 7
 ;Write the function (not-teen? age), which returns true when teen? returns false and false otherwise.
