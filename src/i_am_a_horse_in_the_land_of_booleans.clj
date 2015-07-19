@@ -72,8 +72,7 @@
 ;(not-teen? 12) ;=> true
 ;(not-teen? 19) ;=> false
 ;(not-teen? 20) ;=> true
-(defn not-teen? [age]
-  ":(")
+(defn not-teen? [age] (not (teen? age)))
 
 ;Exercise 6
 ;Write a function (generic-doublificate x) that takes one argument and
@@ -93,7 +92,13 @@
 ;(generic-doublificate [])       ;=> nil
 ;(generic-doublificate {:a 1})   ;=> true
 (defn generic-doublificate [x]
-  ":(")
+  (cond 
+    (number? x) (* 2 x)
+    (empty? x) nil
+    (list? x) (* 2 (count x))
+    (vector? x) (* 2 (count x))
+    :else true
+    ))
 
 ;Exercise 8
 ;Write the function (leap-year? year), which returns true if year is a leap year, otherwise false. 
