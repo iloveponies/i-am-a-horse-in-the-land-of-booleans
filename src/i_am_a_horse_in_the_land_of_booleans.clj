@@ -17,8 +17,8 @@
 ; the value of (abs n) is −n, and otherwise n.
 ;(abs -2) ;=> 2
 ;(abs 42) ;=> 42
-(defn abs [x]
-  ":(")
+(defn abs [x] 
+  (if (> x 0) x (- x (* 2 x))))
 
 ;Exercise 4
 ;Write the function (divides? divisor n), which returns true if divisor divides n and false otherwise.
@@ -29,8 +29,9 @@
 ;(divides? 4 2) ;=> false
 ;(divides? 5 10) ;=> true
 ;(divides? 2 5) ;=> false
-(defn divides? [divisor n]
-  ":(")
+ (defn divides? [divisor n] 
+   (if (= (mod n divisor) 0) true false))
+
 
 ;Exercise 5
 ;Write the function (fizzbuzz n) that returns
@@ -43,8 +44,13 @@
 ;(fizzbuzz 45) ;=> "gotcha!"
 ;(fizzbuzz 48) ;=> "fizz"
 ;(fizzbuzz 70) ;=> "buzz"
-(defn fizzbuzz [n]
-  ":(")
+(defn fizzbuzz [n] 
+  (cond 
+    (divides? 15 n) "gotcha!" 
+    (divides? 5 n) "buzz" 
+    (divides? 3 n) "fizz" 
+    :else ""))
+
 
 ;Exercise 2
 ;Write the function (teen? age), which returns truthy if age is at least 13 and at most 19. 
