@@ -100,6 +100,9 @@
     :else true
     ))
 
+; If a divisor is not divisoble by a number, the function returns true; else false
+(defn not-divides? [divisor n] (not (divides? divisor n)))
+
 ;Exercise 8
 ;Write the function (leap-year? year), which returns true if year is a leap year, otherwise false. 
 ;  A year is a leap year if it is divisible by 4, except if it is divisible by 100, in which case 
@@ -111,7 +114,19 @@
 ;(leap-year? 12)  ;=> true
 ;(leap-year? 20)  ;=> true
 ;(leap-year? 15)  ;=> false
+; Wikipedia algorithm:
+;if (year is not exactly divisible by 4) then (it is a common year)
+;else
+;if (year is not exactly divisible by 100) then (it is a leap year)
+;else
+;if (year is not exactly divisible by 400) then (it is a common year)
+;else (it is a leap year)
 (defn leap-year? [year]
-  ":(")
+  (cond 
+    (not-divides? 4 year) false
+    (not-divides? 100 year) true
+    (not-divides? 400 year) false
+    :else true
+    ))
 
 ; '_______'
