@@ -1,0 +1,6 @@
+(< -5 3)
+(ns i-am-a-horse-in-the-land-of-booleans)
+(abs 5)
+(ns i_am_a_horse_in_the_land_of_booleans)
+(abs 5)
+exit
