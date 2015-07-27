@@ -2,10 +2,12 @@
   (:refer-clojure :exclude [boolean]))
 
 (defn boolean [x]
-  (if (= x nil)
-  	(= false)
-  	(= true)
-  )
+  (cond (= x "foo") true
+        (= x nil) false
+        (= x (+ 2 3)) true
+        (= x true) true
+        (= x false) false
+        :else true)
 )
 
 (defn abs [x]
@@ -25,14 +27,16 @@
   ":(")
 
 (defn teen? [age]
-  (if (and (>= age 13) (<= age 19) true)
-  	( = true)
-  	( = false)
-  )
+  (cond (< age 13) false
+        (> age 19) false
+        :else true)
 )
 
 (defn not-teen? [age]	
-  ":(")
+  (cond (< age 13) true
+        (> age 19) true
+        :else false)
+)
 
 (defn generic-doublificate [x]
   ":(")
