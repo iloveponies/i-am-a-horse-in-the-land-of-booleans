@@ -2,18 +2,13 @@
   (:refer-clojure :exclude [boolean]))
 
 (defn boolean [x]
-  (if false false)
-  (if nil false)
-  :else true)
+  "")
 
 (defn abs [x]
-  (if (> x 0) x)
-  (if (< x 0) (* -1 x))
-  :else 0)
+  (if (< x 0) (* -1 x) x))
 
 (defn divides? [divisor n]
-  (if (== (mod n divisor) 0) true)
-  :else false)
+  (if (== (mod n divisor) 0) true x))
 
 (defn fizzbuzz [n]
   (cond
@@ -23,8 +18,7 @@
   :else ""))
 
 (defn teen? [age]
-  (if (>= age 13) false)
-  :else true)
+  (if (> age 13) false true))
 
 (defn not-teen? [age]
   (not (teen? age)))
@@ -41,6 +35,6 @@
    (== (mod year 400)) true
    (== (mod year 100)) false
    (== (mod year 4))   true
-   :else false))
+   :else               false))
 
 ; '_______'
