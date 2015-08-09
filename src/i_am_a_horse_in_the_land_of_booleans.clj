@@ -16,9 +16,9 @@
 
 (defn fizzbuzz [n]
   (cond
-    (zero? (mod n 3)) "fizz"
-    (zero? (mod n 5)) "buzz"
     (zero? (mod n 15)) "gotcha!"
+    (zero? (mod n 5)) "buzz"
+    (zero? (mod n 3)) "fizz"
     :else ""))
 
 (defn teen? [age]
