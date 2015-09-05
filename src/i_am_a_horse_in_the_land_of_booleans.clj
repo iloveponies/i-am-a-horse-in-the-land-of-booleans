@@ -19,7 +19,7 @@
     (divides? 15 n) "gotcha!"
     (divides? 5 n) "buzz"
     (divides? 3 n) "fizz"
-    :else n
+    :else ""
    ))
 
 (defn teen? [age]
@@ -32,7 +32,7 @@
   (cond
    (number? x) (* 2 x)
    (empty? x) nil
-   (list? x) (* 2 (count x))
+   (or (vector? x)(list? x)) (* 2 (count x))
    :else true))
 
 (defn leap-year? [year]
