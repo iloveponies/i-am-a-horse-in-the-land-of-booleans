@@ -30,8 +30,8 @@
 (defn generic-doublificate [x]
   (cond
    (number? x) (+ x x)
-   (or (list? x) (vector? x)) (* 2 (count x))
    (and (coll? x) (empty? x)) nil
+   (or (list? x) (vector? x)) (* 2 (count x))
    :else true))
 
 (defn leap-year? [year]
