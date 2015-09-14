@@ -24,7 +24,7 @@
   (< 12 age 20))
 
 (defn not-teen? [age]
-  ":(")
+  (not  (teen? age)))
 
 (defn generic-doublificate [x]
   (cond
@@ -36,6 +36,6 @@
 
 
 (defn leap-year? [year]
-  ":(")
+  (or (and (divides? 4 year) (not (divides? 100 year))) (and (divides? 4 year) (divides? 400 year))))
 
 ; '_______'
