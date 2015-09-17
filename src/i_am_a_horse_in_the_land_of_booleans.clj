@@ -4,19 +4,18 @@
 (defn boolean [x]
     ((if x nil)
         ("falsy")
-
         ((if x false)
             ("falsy")
-            ("truthy")
-        )
-    )
-)
+            ("truthy"))))
 
 (defn abs [x]
-  ":(")
+    (if (< x 0)
+        (* x -1)
+        (x)))
 
 (defn divides? [divisor n]
-  ":(")
+    )
+
 
 (defn fizzbuzz [n]
   ":(")
