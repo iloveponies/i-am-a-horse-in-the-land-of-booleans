@@ -36,13 +36,6 @@
         (or (list? x) (vector? x))  (* (count x) 2)
         :else                       true))
 
-        if (year is not exactly divisible by 4) then (it is a common year)
-        else
-        if (year is not exactly divisible by 100) then (it is a leap year)
-        else
-        if (year is not exactly divisible by 400) then (it is a common year)
-        else (it is a leap year)
-
 (defn leap-year? [year]
     (cond
         (and (divisible? 100 year) (divisible? 400 year))   true
