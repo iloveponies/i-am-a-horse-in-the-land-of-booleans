@@ -5,9 +5,9 @@
   (if x true false))
 
 (defn abs [x]
-  (if (< x 0)
-    (* -1 x)
-    (x)))
+  (if (> x 1)
+    x
+    (* -1 x)))
 
 (defn divides? [divisor n]
   (= 0 (mod n divisor)))
@@ -20,7 +20,7 @@
     :else ""))
 
 (defn teen? [age]
-  (<= 13 age <= 19))
+  (<= 13 age 19))
 
 (defn not-teen? [age]
   (not (teen? age)))
