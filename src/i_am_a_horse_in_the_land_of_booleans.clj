@@ -14,7 +14,7 @@
   ":(")
 
 (defn teen? [age]
-  ":(")
+  (< 12 age 20))
 
 (defn not-teen? [age]
   ":(")
