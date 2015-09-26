@@ -27,6 +27,10 @@
   ":(")
 
 (defn leap-year? [year]
-  ":(")
+  (cond
+    (not (= 0 (mod year 4))) false
+    (not (= 0 (mod year 100))) true
+    (not (= 0 (mod year 400))) false
+    :else true))
 
 ; '_______'
