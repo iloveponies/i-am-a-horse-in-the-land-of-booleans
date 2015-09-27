@@ -24,7 +24,11 @@
   (not (teen? age)))
 
 (defn generic-doublificate [x]
-  ":(")
+  (cond
+    (number? x) (* x 2)
+    (and (or (list? x) (vector? x)) (not (empty? x))) (* 2 (count x))
+    (and (or (list? x) (vector? x) (map? x)) (empty? x)) nil
+    :else true))
 
 (defn leap-year? [year]
   (cond
