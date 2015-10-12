@@ -4,7 +4,7 @@
 (defn boolean [x]
   (if (or nil false)
       true
-      false)
+      false))
 
 (defn abs [x]
   (if (>= x 0)
@@ -40,4 +40,3 @@
        (or (not (divides? 100 year)
            (divides? 400 year)))))
 
-; '_______'
