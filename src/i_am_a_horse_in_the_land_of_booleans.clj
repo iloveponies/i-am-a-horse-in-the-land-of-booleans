@@ -2,7 +2,8 @@
   (:refer-clojure :exclude [boolean]))
 
 (defn boolean [x]
-  ":(")
+  (if false "true" "false")
+  (if nil "true" "false")
 
 (defn abs [x]
   ":(")
