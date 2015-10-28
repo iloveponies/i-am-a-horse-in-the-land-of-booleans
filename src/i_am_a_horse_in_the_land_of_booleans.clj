@@ -57,12 +57,34 @@
   )
 
 (defn not-teen? [age]
-  ":(")
+  (not(teen? age))
+
+)
 
 (defn generic-doublificate [x]
-  ":(")
 
+  (cond
+    (number? x) (* 2 x)
+    (empty? x) nil
+    (list? x) (* 2 (count x))
+    (vector? x) (* 2 (count x))
+    :else true
+  )
+)
 (defn leap-year? [year]
-  ":(")
+  
+  (if(divides? 4 year)
+    
+        (if(divides? 100 year)
 
-; '_______'
+          (if(divides? 400 year)
+
+          true
+
+          false)
+          true)
+  false
+  )
+  
+)
+; ^_______^
