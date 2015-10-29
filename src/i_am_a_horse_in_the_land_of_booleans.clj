@@ -2,9 +2,10 @@
   (:refer-clojure :exclude [boolean]))
 
 (defn boolean [x]
-  (if (or nil false)
-      true
-      false))
+  (if (or (= x nil)
+          (= x false))
+      false
+      true))
 
 (defn abs [x]
   (if (>= x 0)
@@ -16,9 +17,9 @@
 
 (defn fizzbuzz [n]
   (cond
-    (and (divides 3 n) (divides 5 n)) "gotcha!"
-    (divides 3 n) "fizz"
-    (divides 5 n) "buzz"
+    (and (divides? 3 n) (divides? 5 n)) "gotcha!"
+    (divides? 3 n) "fizz"
+    (divides? 5 n) "buzz"
     :else         ""))
 
 (defn teen? [age]
@@ -37,6 +38,6 @@
 
 (defn leap-year? [year]
   (and (divides? 4 year)
-       (or (not (divides? 100 year)
-           (divides? 400 year)))))
+       (or (not (divides? 100 year))
+           (divides? 400 year))))
 
