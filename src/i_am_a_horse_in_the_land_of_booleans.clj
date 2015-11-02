@@ -13,7 +13,7 @@
       (- 0 x)))
 
 (defn divides? [divisor n]
-  (== (mod n divisor) 0))
+  (= (mod n divisor) 0))
 
 (defn fizzbuzz [n]
   (cond
