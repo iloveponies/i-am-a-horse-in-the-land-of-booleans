@@ -2,8 +2,6 @@
   (:use clojure.repl)
   (:refer-clojure :exclude [boolean]))
 
-(doc map)
-
 (defn boolean [x]
   (if x
     true
