@@ -27,16 +27,10 @@
   (cond
      (number? x) (* x 2)
      (empty? x) nil
-     (list? x) (* 2 (count x))
+     (or (list? x) (vector? x)) (* 2 (count x))
      :else true))
 
 (defn leap-year? [year]
   (or (and (= (mod year 4) 0) (> (mod year 100) 0)) (= (mod year 400) 0)))
-
-(defn qq [year]
-  (cond
-     (
-
-  (or (= (mod year 100) 1) (= (mod year 400) 0)))
 
 ; '_______'
