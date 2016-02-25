@@ -29,7 +29,11 @@
   ":(")
 
 (defn generic-doublificate [x]
-  ":(")
+  (cond
+    (number? x)                (* 2 x)
+    (empty? x)                 nil
+    (or (list? x) (vector? x)) (* 2 (count x))
+    :else                      true))
 
 (defn leap-year? [year]
   ":(")
