@@ -8,11 +8,11 @@
   (Math/abs x))
 
 (defn divides? [divisor n]
-  (if (= (mod divisor n) 0) true false))
+  (if (= (mod n divisor) 0) true false))
 
 (defn fizzbuzz [n]
   (cond
-    (= (mod n 15) 0) "gotcha"
+    (= (mod n 15) 0) "gotcha!"
     (= (mod n 5) 0) "buzz"
     (= (mod n 3) 0) "fizz"
     :else ""))
