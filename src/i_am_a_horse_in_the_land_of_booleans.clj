@@ -17,7 +17,7 @@
 (abs 42) ;=> 42
 
 (defn divides? [divisor n]
-  (if (== 0 (mod n divisor)) true false))
+  (== 0 (mod n divisor)))
 
 (divides? 2 4) ;=> true
 (divides? 4 2) ;=> false
@@ -37,7 +37,7 @@
 (fizzbuzz 70) ;=> "buzz"
 
 (defn teen? [age]
-  (if (<= 13 age 19) true false))
+  (<= 13 age 19))
 
 (teen? 12) ;=> false
 (teen? 13) ;=> true
