@@ -17,7 +17,7 @@
 (abs 42) ;=> 42
 
 (defn divides? [divisor n]
-  (== 0 (mod n divisor)))
+  (zero? (mod n divisor)))
 
 (divides? 2 4) ;=> true
 (divides? 4 2) ;=> false
