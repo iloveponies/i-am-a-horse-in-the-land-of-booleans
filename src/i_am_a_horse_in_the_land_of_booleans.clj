@@ -2,27 +2,82 @@
   (:refer-clojure :exclude [boolean]))
 
 (defn boolean [x]
-  ":(")
+  (if x true false))
 
 (defn abs [x]
-  ":(")
+  (if (< x 0) (- x) x))
 
 (defn divides? [divisor n]
-  ":(")
+  (= 0 (rem n divisor)))
 
+
+;;;Write the function (fizzbuzz n) that returns
+;;;  "fizz" when n is divisible by 3,
+;;;  "buzz" when n is divisible by 5,
+;;;  "gotcha!" when n is divisible by 15, and
+;;;the empty string "" otherwise.
+;;;Use the divides? function from the previous exercise.
+;;;  (fizzbuzz 2)  ;=> ""
+;;;  (fizzbuzz 45) ;=> "gotcha!"
+;;;  (fizzbuzz 48) ;=> "fizz"
+;;;  (fizzbuzz 70) ;=> "buzz"
 (defn fizzbuzz [n]
-  ":(")
+  (cond
+    (divides? 15 n) "gotcha!"
+    (divides? 3 n)  "fizz"
+    (divides? 5 n)  "buzz"
+    :else           ""))
+
 
 (defn teen? [age]
-  ":(")
+  (< 12 age 20))
 
 (defn not-teen? [age]
-  ":(")
+  (not (teen? age)))
 
+
+;;;Write a function (generic-doublificate x) that takes one argument and
+;;;  - doubles it if it is a number,
+;;;  - returns nil if it is an empty collection,
+;;;  - if it is a list or a vector, returns two times the length of it
+;;;  - returns true otherwise.
+;;;
+;;;You can use the following functions:
+;;;  (number? n) returns true if n is a number.
+;;;  (empty? coll) returns true if coll is empty.
+;;;  (list? coll) and (vector? coll) test if coll is a list or a vector.
+;;;  (count coll) returns the length of a list or a vector.
+;;;
+;;;  (generic-doublificate 1)        ;=> 2
+;;;  (generic-doublificate [1 2])    ;=> 4
+;;;  (generic-doublificate '(65 21)) ;=> 4
+;;;  (generic-doublificate {})       ;=> nil
+;;;  (generic-doublificate [])       ;=> nil
+;;;  (generic-doublificate {:a 1})   ;=> true
 (defn generic-doublificate [x]
-  ":(")
+  (cond
+    (number? x) (* x 2)
+    (and (coll? x) (empty? x)) nil
+    (or (list? x) (vector? x)) (* (count x) 2)
+    :else true))
 
+
+;;;Write the function (leap-year? year), which returns true if year is a leap
+;;;year, otherwise false. A year is a leap year if it is divisible by 4, except if
+;;;it is divisible by 100, in which case it still is a leap year if it is
+;;;divisible by 400.
+;;;See Wikipedia for a simple pseudocode solution.
+;;;  (leap-year? 100) ;=> false
+;;;  (leap-year? 200) ;=> false
+;;;  (leap-year? 400) ;=> true
+;;;  (leap-year? 12)  ;=> true
+;;;  (leap-year? 20)  ;=> true
+;;;  (leap-year? 15)  ;=> false
 (defn leap-year? [year]
-  ":(")
+  (cond
+    (divides? 400 year) true
+    (divides? 100 year) false
+    (divides? 4 year) true
+    :else false))
 
 ; '_______'
