@@ -3,8 +3,6 @@
 
 (defn boolean [x] (if x true false))
 
-(boolean true)
-
 (defn abs [x]
   (if (< x 0) (- 0 x) x) )
 
@@ -47,7 +45,6 @@
     :else false)
   )
 
-(leap-year? 100)
 
 
 ; '_______'
