@@ -25,9 +25,9 @@
 
 (defn generic-doublificate [x]
   (cond
-    (if (integer? x) (divides? 2 x)) (* 2 x)
-    (if (or (vector? x) (list? x)) (empty? x)) nil
-    (or (vector? x) (list? x)) (* 2 (count x))
+    (integer? x) (* 2 x)
+    (if (or (map? x) (vector? x) (list? x)) (empty? x)) nil
+    (or (map? x) (vector? x) (list? x)) (* 2 (count x))
     :else true))
 
 (defn leap-year? [year]
