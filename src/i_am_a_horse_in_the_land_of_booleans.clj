@@ -27,7 +27,7 @@
   (cond
     (integer? x) (* 2 x)
     (if (or (map? x) (vector? x) (list? x)) (empty? x)) nil
-    (or (map? x) (vector? x) (list? x)) (* 2 (count x))
+    (or (vector? x) (list? x)) (* 2 (count x))
     :else true))
 
 (defn leap-year? [year]
