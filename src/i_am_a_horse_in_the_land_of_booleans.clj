@@ -4,6 +4,7 @@
 (defn boolean [x]
   (not (or (= nil x)(= false x))))
 
+; what!
 (defn abs [x]
   (if (< x 0)(unchecked-negate-int x)x))
 
