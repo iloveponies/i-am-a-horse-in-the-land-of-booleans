@@ -34,6 +34,6 @@
 
 (defn leap-year? [year]
   (cond
-    (divides? 4 year) (if (divides? 100 year) (divides? 400 year) false)
+    (divides? 4 year) (if (divides? 100 year) (divides? 400 year) true)
     :else false
     ))
