@@ -35,8 +35,3 @@
     (divides? 4 year) (if (divides? 100 year) (divides? 400 year) false)
     :else false
     ))
-
-; '_______'
-
-
-(leap-year? 2100)
