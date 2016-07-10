@@ -11,7 +11,9 @@
 
 (defn fizzbuzz [n]
   (cond
-    (divides? 3 n) (if (divides? 5 n) "gotcha!" "fizz")
+    ;(divides? 3 n) (if (divides? 5 n) "gotcha!" "fizz")
+    (divides? 15 n) "gotcha!"
+    (divides? 3 n) "fizz"
     (divides? 5 n) "buzz"
     :else ""
     ))
