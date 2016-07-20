@@ -11,7 +11,7 @@
   if((= (mod n divisor) 0) true false))
 
 (defn fizzbuzz [n]
-  cond((divides? 15) "gotcha"
+  cond((divides? 15) "gotcha!"
        (divides? 3) "fizz"
        (divides? 5) "buzz"
        :else ""))
