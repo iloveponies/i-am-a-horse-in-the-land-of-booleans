@@ -7,7 +7,7 @@
     true))
 
 (defn abs [x]
-  (if (< x 0)
+  (if (neg? x)
     (- x)
     x))
 
