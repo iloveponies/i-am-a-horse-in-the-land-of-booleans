@@ -3,7 +3,8 @@
 
 (defn boolean [x]
 	(if
-		(or (= x false) (= x nil)) false
+		(or (= x false) (= x nil))
+		false
 		true
 		)
 	)
