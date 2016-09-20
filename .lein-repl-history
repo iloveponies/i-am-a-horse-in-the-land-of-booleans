@@ -1,0 +1,8 @@
+(use 'i-am-a-horse-in-the-land-of-booleans)
+(generic-doublificate 1)
+(generic-doublificate [1 2])
+(generic-doublificate '(65 21))
+(generic-doublificate {})
+(generic-doublificate [])
+(generic-doublificate {:a 1})
+(coll? {:a 1})
