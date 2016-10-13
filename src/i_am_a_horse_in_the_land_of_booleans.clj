@@ -3,9 +3,9 @@
 
 (defn boolean [x]
   "Checks booleans"
-  ((if x
+  (if x
     true
-    false)))
+    false))
 
 (defn abs [x]
   ":("
@@ -30,7 +30,7 @@
 
 (defn teen? [age]
   "Checks for teenagers"
-  (<= age 13))
+  (and (>= age 13) (< age 20)))
 
 (defn not-teen? [age]
   ":("
