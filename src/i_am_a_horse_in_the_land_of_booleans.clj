@@ -8,7 +8,7 @@
   (if (< x 0) (* -1 x) x))
 
 (defn divides? [divisor n]
-  ":(")
+  (= (mod n divisor) 0))
 
 (defn fizzbuzz [n]
   ":(")
