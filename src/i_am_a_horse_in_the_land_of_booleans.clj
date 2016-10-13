@@ -11,7 +11,11 @@
   (= (mod n divisor) 0))
 
 (defn fizzbuzz [n]
-  ":(")
+  (cond
+    (= 0 (mod n 15)) "gotcha!"
+    (= 0 (mod n 5))  "buzz"
+    (= 0 (mod n 3))  "fizz"
+    :else ""))
 
 (defn teen? [age]
   (< 12 age 20))
