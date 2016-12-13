@@ -4,4 +4,4 @@
         midje.sweet))
 
 (facts "generic-doublificate (additional)"
-  (generic-doublificate nil) => nil)
+  (generic-doublificate "") => true)

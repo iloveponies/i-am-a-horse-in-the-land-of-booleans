@@ -35,15 +35,15 @@
     (* (count coll) 2)))
 
 (defmulti doublifier class)
-(defmethod doublifier ISeq doublifier [v]
+(defmethod doublifier ISeq [v]
   (doublify-coll v))
 (defmethod doublifier PersistentVector [v]
   (doublify-coll v))
 (defmethod doublifier PersistentArrayMap [v]
   (let [doublified-v (doublify-coll v)]
     (if doublified-v true nil)))
-(defmethod doublifier :default [v]
-  (if v 2 nil))
+(defmethod doublifier Number [v] (* v 2))
+(defmethod doublifier :default [v] true)  
 
 (defn generic-doublificate [x]
   (doublifier x))
