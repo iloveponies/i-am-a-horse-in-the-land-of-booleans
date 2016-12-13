@@ -6,11 +6,6 @@
     false
     true))
 
-(defn bool [x]
-    (if (true? x)
-    true
-    false))
-
 (defn abs [x]
   ":(")
 
@@ -21,7 +16,9 @@
   ":(")
 
 (defn teen? [age]
-  ":(")
+  (if (<= 13 age 19)
+    true
+    false))
 
 (defn not-teen? [age]
   ":(")
