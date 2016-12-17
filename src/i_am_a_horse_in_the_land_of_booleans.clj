@@ -38,12 +38,6 @@
 
 ; '_______'
 
-(leap-year? 100) ;=> false
-(leap-year? 200) ;=> false
-(leap-year? 400) ;=> true
-(leap-year? 12)  ;=> true
-(leap-year? 20)  ;=> true
-(leap-year? 15)  ;=> false
 
 
 
