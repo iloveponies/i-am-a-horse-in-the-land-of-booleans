@@ -12,9 +12,9 @@
 
 (defn fizzbuzz [n]
   (cond
+    (divides? 15 n) "gotcha!"
     (divides? 3 n)  "fizz"
     (divides? 5 n)  "buzz"
-    (divides? 15 n) "gotcha!"
     :else           ""))
 
 (defn teen? [age]
@@ -25,7 +25,7 @@
 
 (defn generic-doublificate [x]
   (cond
-    (number? x)                (* x x)
+    (number? x)                (* x 2)
     (empty? x)                 nil
     (or (list? x) (vector? x)) (* (count x) 2)
     :else                      true))
