@@ -33,6 +33,6 @@
 (defn leap-year? [year]
   (if (divides? 100 year)
     (divides? 400 year)
-    (divides? 4))
+    (divides? 4 year))
 
 ; '_______'
