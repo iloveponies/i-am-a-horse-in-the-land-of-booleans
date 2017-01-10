@@ -5,24 +5,34 @@
   (if (or (= x nil) (= x false)) false true))
 
 (defn abs [x]
-  ":(")
+  (if (< x 0) (* -1 x) x))
 
 (defn divides? [divisor n]
-  ":(")
+  (== (mod n divisor) 0 ))
 
 (defn fizzbuzz [n]
-  ":(")
+  (cond
+    (divides? 3 n)  "fizz"
+    (divides? 5 n)  "buzz"
+    (divides? 15 n) "gotcha!"
+    :else           ""))
 
 (defn teen? [age]
-  ":(")
+  (<= 13 age 19))
 
 (defn not-teen? [age]
-  ":(")
+  (not (teen? age)))
 
 (defn generic-doublificate [x]
-  ":(")
+  (cond
+    (number? x)                (* x x)
+    (empty? x)                 nil
+    (or (list? x) (vector? x)) (* (count x) 2)
+    :else                      true))
 
 (defn leap-year? [year]
-  ":(")
+  (if (divides? 100 year)
+    (divides? 400 year)
+    (divides? 4))
 
 ; '_______'
