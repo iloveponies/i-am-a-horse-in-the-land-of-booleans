@@ -1,0 +1,3 @@
+(use 'i-am-a-horse-in-the-land-of-booleans)
+boolean false
+boolean nil
