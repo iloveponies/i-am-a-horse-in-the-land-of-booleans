@@ -1,28 +1,66 @@
-(ns i-am-a-horse-in-the-land-of-booleans
+
+	(ns i-am-a-horse-in-the-land-of-booleans
   (:refer-clojure :exclude [boolean]))
 
-(defn boolean [x]
-  ":(")
 
-(defn abs [x]
-  ":(")
+(defn
+  boolean
+  "Boolen or no"
+  [x]
+  (if (= x false) false (if (= x nil) false true)))
 
-(defn divides? [divisor n]
-  ":(")
+(defn
+  abs
+  "absolute valu"
+  [x]
+  (if (< x 0) (* -1 x) x))
 
-(defn fizzbuzz [n]
-  ":(")
+(defn
+  divides?
+  "No remainder?"
+  [divisor n]
+  (if (= 0 (mod n divisor)) true false)
+  )
 
-(defn teen? [age]
-  ":(")
+(defn
+  fizzbuzz
+  "F-B!"
+  [n]
+  (cond
+    (divides? 15 n) "gotcha!"
+    (divides? 5 n) "buzz"
+    (divides? 3 n) "fizz"
+    :else   ""
+    )
+  )
 
-(defn not-teen? [age]
-  ":(")
+(defn
+  teen?
+  "13-19?"
+  [age]
+  (< 12 age 20))
 
-(defn generic-doublificate [x]
-  ":(")
+(defn
+  not-teen?
+  "NOT teen?"
+  [age]
+  (not (teen? age)))
 
-(defn leap-year? [year]
-  ":(")
+(defn
+  generic-doublificate
+  [x]
+  (cond
+    (number? x) (* x 2)
+    (empty? x) nil
+    (list? x)  (* 2 (count x))
+    (vector? x) (* 2 (count x))
+    :else true
+  ))
 
-; '_______'
+
+(defn
+  leap-year?
+  "is leapyear??"
+  [year]
+  (or (= 0 (mod year 400))(and (= 0 (mod year 4)) (not (= 0 (mod year 100))))))
+; =\______/=
