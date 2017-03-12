@@ -18,10 +18,17 @@
   ":(")
 
 (defn teen? [age]
-  ":(")
+  (if (< age 13)
+    false
+    (if (> age 19)
+      false
+      true)))
+
 
 (defn not-teen? [age]
-  ":(")
+  (if (teen? age)
+    false
+    true))
 
 (defn generic-doublificate [x]
   ":(")
