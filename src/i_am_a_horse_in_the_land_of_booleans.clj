@@ -17,10 +17,14 @@
     false))
 
 (defn fizzbuzz [n]
-  ":(")
+  )
 
 (defn teen? [age]
-  ":(")
+  (if (<= age 12)
+    false
+    (if (>= age 20)
+      false
+      true)))
 
 (defn not-teen? [age]
   ":(")
