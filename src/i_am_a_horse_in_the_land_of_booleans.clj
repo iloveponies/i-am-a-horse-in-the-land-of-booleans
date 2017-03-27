@@ -8,7 +8,7 @@
 
 (defn abs [x]
   (if (< x 0)
-  (- x (* 2 x))
+  (- x)
   x))
 
 (defn divides? [divisor n]
