@@ -18,7 +18,7 @@
 
 (defn fizzbuzz [n]
   (cond
-    (= (mod n 15) 0) (str "gotha!")
+    (= (mod n 15) 0) (str "gotcha!")
     (= (mod n 3) 0) (str "fizz")
     (= (mod n 5) 0) (str "buzz")
     :else (str "")))
@@ -34,7 +34,13 @@
   (not (teen? age)))
 
 (defn generic-doublificate [x]
-  ":(")
+  (cond
+    (number? x) (* x 2)
+    (empty? x) nil
+    (list? x) (* (count x) 2)
+    (vector? x) (* (count x) 2)
+    :else true)
+  )
 
 (defn leap-year? [year]
   ":(")
