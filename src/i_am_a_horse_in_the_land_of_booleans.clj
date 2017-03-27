@@ -10,9 +10,7 @@
     x))
 
 (defn divides? [divisor n]
-  (if (== (mod n divisor) 0)
-    true
-    false))
+  (== (mod n divisor) 0))
 
 (defn fizzbuzz [n]
   (cond
@@ -22,9 +20,7 @@
     :else ""))
 
 (defn teen? [age]
-  (if (<= 13 age 19)
-    true
-    false))
+  (<= 13 age 19))
 
 (defn not-teen? [age]
   (not (teen? age)))
@@ -38,8 +34,5 @@
 
 (defn leap-year? [year]
   (cond
-    (divides? 100 year) (if (divides? 400 year) true false)
-    (divides? 4 year) true
-    :else false))
-
-; '_______'
+    (divides? 100 year) (divides? 400 year)
+    :else (divides? 4 year)))
