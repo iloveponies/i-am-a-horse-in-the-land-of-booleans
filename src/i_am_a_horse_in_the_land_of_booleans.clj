@@ -17,7 +17,11 @@
     false))
 
 (defn fizzbuzz [n]
-  )
+  (cond
+    (= (mod n 15) 0) (str "gotha!")
+    (= (mod n 3) 0) (str "fizz")
+    (= (mod n 5) 0) (str "buzz")
+    :else (str "")))
 
 (defn teen? [age]
   (if (<= age 12)
@@ -27,7 +31,7 @@
       true)))
 
 (defn not-teen? [age]
-  ":(")
+  (not (teen? age)))
 
 (defn generic-doublificate [x]
   ":(")
