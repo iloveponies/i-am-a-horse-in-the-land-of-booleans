@@ -17,7 +17,11 @@
   false))
 
 (defn fizzbuzz [n]
-  ":(")
+  (cond
+    (== 0 (mod n 15)) "gotcha!"
+    (== 0 (mod n 5)) "buzz"
+    (== 0 (mod n 3)) "fizz"
+  :else ""))
 
 (defn teen? [age]
   (if (>= 19 age 13)
