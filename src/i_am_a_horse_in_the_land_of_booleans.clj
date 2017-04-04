@@ -27,7 +27,7 @@
       false
       )))
 
-(defn [n]
+(defn fizzbuzz [n]
   (if (divides? 15 n)
     "gotcha!"
     (if (divides? 5 n)
@@ -61,7 +61,7 @@
        true
        false)
      true)
-   )
+   ))
 
   
 
