@@ -37,9 +37,8 @@
 
 
 (defn not-teen? [age]
-  (if (teen? age)
-    false
-    true))
+  (not (teen? age)))
+
 
 (defn generic-doublificate [x]
   (cond
