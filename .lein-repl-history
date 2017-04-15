@@ -1,0 +1,22 @@
+boolean "foo"
+boolean 0
+(use 'i-am-a-horse-in-the-land-of-booleans)
+boolean 0
+boolean nil
+(boolean 0)
+(use 'i-am-a-horse-in-the-land-of-booleans)
+(boolean 0)
+(teen? 20)
+(use 'i-am-a-horse-in-the-land-of-booleans)
+(teen? 20)
+quit
+(use 'i-am-a-horse-in-the-land-of-booleans)
+(teen? 20)
+(teen? 19)
+(teen? 13)
+(teen? 15)
+(teen? 12)
+(abs 6)
+(use 'i-am-a-horse-in-the-land-of-booleans)
+(abs 6)
+quit
