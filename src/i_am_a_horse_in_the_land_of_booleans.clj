@@ -3,10 +3,10 @@
 
 (defn boolean [x]
   (if (= x nil)
-    (true? nil)
+    false
     (if (= x false)
-      (true? nil)
-      (true? true)
+      false
+      true
       )
     )
   )
@@ -20,27 +20,45 @@
 
 (defn divides? [divisor n]
   (if (== divisor 0)
-    (true? nil) ;check against 0
+    false ;check against 0
     (if (= 0 (mod n divisor))
-      (true? true)
-      (true? nil)
+      true
+      false
       )
     )
   )
 
 (defn fizzbuzz [n]
-  ":(")
+  (cond
+    (divides? 15 n) "gotcha!"
+    (divides? 3 n) "fizz"
+    (divides? 5 n) "buzz"
+    :else ""
+    )
+  )
 
 (defn teen? [age]
   (< 12 age 20))
 
 (defn not-teen? [age]
-  ":(")
+  (not (teen? age)))
 
 (defn generic-doublificate [x]
-  ":(")
+  (cond
+    (number? x) (* x 2)
+    (empty? x) nil
+    (list? x) (* 2 (count x))
+    (vector? x) (* 2 (count x))
+    :else true
+    )
+  )
 
 (defn leap-year? [year]
-  ":(")
+  (cond
+    (divides? 400 year) true
+    (divides? 100 year) false
+    (divides? 4 year) true
+    :else false
+    ))
 
 ; '_______'
