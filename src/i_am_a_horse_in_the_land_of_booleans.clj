@@ -19,7 +19,14 @@
   )
 
 (defn divides? [divisor n]
-  ":(")
+  (if (== divisor 0)
+    (true? nil) ;check against 0
+    (if (= 0 (mod n divisor))
+      (true? true)
+      (true? nil)
+      )
+    )
+  )
 
 (defn fizzbuzz [n]
   ":(")
