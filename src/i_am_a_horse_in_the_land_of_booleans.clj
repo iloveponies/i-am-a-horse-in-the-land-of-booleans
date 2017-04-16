@@ -114,8 +114,6 @@
 (not-teen? 12)
 (not-teen? 19)
 
-;ALL OF THE ABOVE PASS
-;ALL OF THE ABOVE PASS
 
 (defn
   leap-year?
@@ -134,4 +132,6 @@
 (leap-year? 20)
 (leap-year? 15)
 
+;ALL OF THE ABOVE PASS
+;ALL OF THE ABOVE PASS
 ; '_______'
