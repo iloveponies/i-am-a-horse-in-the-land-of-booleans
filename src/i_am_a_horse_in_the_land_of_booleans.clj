@@ -36,10 +36,10 @@
     :else true))
 
 (defn leap-year? [year]
-  (if (==(mod year 4) 0)
+  (if (divides? 4 year)
     (if (or
-          (not(== (mod year 100) 0))
-          (==(mod year 400) 0)) true false)
+          (not(divides? 100 year))
+          (divides? 400 year)) true false)
     false))
 
 
