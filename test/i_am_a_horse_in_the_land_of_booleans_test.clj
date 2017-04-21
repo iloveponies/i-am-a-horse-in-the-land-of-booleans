@@ -1,2 +1,5 @@
 (ns i-am-a-horse-in-the-land-of-booleans-test
-  (:use iloveponies.tests.i-am-a-horse-in-the-land-of-booleans))
+  (:use i-am-a-horse-in-the-land-of-booleans))
+
+(require 'iloveponies.tests.i-am-a-horse-in-the-land-of-booleans :reload)
+
