@@ -1,0 +1,43 @@
+(use 'i-am-a-horse-in-the-land-of-booleans)
+(sign 1)
+(sign 3443)
+(sign -3443)
+(defn sign [x]
+  (if (< x 0)
+    "-"
+    "+"))
+(- 3)
+(mod 2 3)
+(mod 2 5)
+(mod 1 5)
+(mod 1 10)
+(mod 2 10)
+(mod 10 2)
+(mod 10 3)
+(defn super-sign [number]
+  (cond
+    (neg? number) "negative"
+    (pos? number) "positive"
+    :else         "zero"))
+(super-sign 0)
+(super-sign 1)
+(list? [])
+(list? ())
+(vector? [])
+(vector? {})
+{}
+(empty? {})
+(len {})
+(length {})
+(count {}))
+(count {})
+(and true false)
+(not false)
+(or false)
+(or false false false)
+(or false false false true)
+(or false false false {})
+(or false false true {})
+(or false false {})
+(and false false true {})
+(and true {})
