@@ -9,9 +9,9 @@
 
 (defn fizzbuzz [n]
   (cond
-    (= "true" (divides? 15 n)) "gotcha!"
-    (= "true" (divides? 5 n)) "buzz"
-    (= "true" (divides? 3 n)) "fizz"
+    (= true (divides? 15 n)) "gotcha!"
+    (= true (divides? 5 n)) "buzz"
+    (= true (divides? 3 n)) "fizz"
     :else "")
   )
 
@@ -33,9 +33,9 @@
 
 (defn leap-year? [year]
   (cond
-    (= "true" (and (divides? 4 year) (divides? 100 year) (divides? 400 year))) true
-    (= "true" (and (divides? 4 year) (divides? 100 year))) false
-    (= "true" (divides? 4 year)) true
+    (= true (and (divides? 4 year) (divides? 100 year) (divides? 400 year))) true
+    (= true (and (divides? 4 year) (divides? 100 year))) false
+    (= true (divides? 4 year)) true
     :else false
     ))
 
