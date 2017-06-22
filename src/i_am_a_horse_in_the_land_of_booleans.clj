@@ -14,7 +14,7 @@
   ":(")
 
 (defn teen? [age]
-  ":(")
+  (if (< 12 age 20) true false))
 
 (defn not-teen? [age]
   ":(")
