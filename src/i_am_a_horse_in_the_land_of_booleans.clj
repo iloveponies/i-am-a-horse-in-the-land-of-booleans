@@ -29,7 +29,7 @@
   )
 
 (defn teen? [age]
-  (if (< 9 age 20)
+  (if (< 12 age 20)
     true
     false)
   )
