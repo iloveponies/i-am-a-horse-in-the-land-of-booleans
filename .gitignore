@@ -11,3 +11,7 @@ pom.xml
 .idea
 *.iml
 .lei-repl-history
+i-am-a-horse-in-the-land-of-booleans.iml
+.midje-grading-config.clj
+README.md
+project.clj
