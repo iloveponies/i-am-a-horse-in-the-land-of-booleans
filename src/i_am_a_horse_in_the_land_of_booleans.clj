@@ -3,7 +3,7 @@
 
 (defn boolean [x]
   (if ( or (= x false) (= x nil))
-    "F" ;false
+    false
     true))
 
 (defn abs [x]
