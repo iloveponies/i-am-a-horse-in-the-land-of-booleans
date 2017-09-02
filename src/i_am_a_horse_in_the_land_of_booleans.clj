@@ -25,14 +25,16 @@
     true
     false))
 
-(defn fizzbuzz [n]
+(defn fizzbuzz
+  "Infamous fizzbuzz implementation done in Clojure."
+  [n]
   (cond
     (divides? 3 n)
     (if
-      (divides? 5 n) "gotchya!" "fizz")
+      (divides? 5 n) "gotcha!" "fizz")
     (divides? 5 n)
     (if
-      (divides? 3 n) "gotchya!" "buzz")
+      (divides? 3 n) "gotcha!" "buzz")
     :else ""))
 
 (defn teen?
@@ -42,13 +44,37 @@
   (< 12 age 20))
 
 
-(defn not-teen? [age]
-  ":(")
+(defn not-teen?
+  "Age comparator, indicating if age is not a
+  teen."
+  [age]
+  (not (teen? age)))
 
-(defn generic-doublificate [x]
-  ":(")
+(defn generic-doublificate
+  "Takes one argument x and doubles it if it is a number,
+  returns nil if it is an empty collection, returns two times the
+  length if it is a vector or list, or returns true otherwise."
+  [x]
+  (cond
+    (number? x) (* 2 x)
+    (empty? x) nil
+    (list? x) (* 2 (count x))
+    (vector? x) (* 2 (count x))
+    :else true))
 
-(defn leap-year? [year]
-  ":(")
+
+(defn leap-year?
+  "Utilizes a basic algorithm to determine if the entered year
+  is a leap year or not."
+  [year]
+  (cond
+    (divides? 4 year)
+    (if (divides? 100 year)
+      (if (divides? 400 year)
+        true
+        false)
+      true)
+    :else false))
+
 
 ; '_______'
