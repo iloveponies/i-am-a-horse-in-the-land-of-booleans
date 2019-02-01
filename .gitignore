@@ -1,3 +1,4 @@
+.idea
 /target
 /lib
 /classes
@@ -8,3 +9,5 @@ pom.xml
 .lein-deps-sum
 .lein-failures
 .lein-plugins
+/i-am-a-horse-in-the-land-of-booleans.iml
+/.lein-repl-history
