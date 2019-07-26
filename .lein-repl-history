@@ -1,0 +1,12 @@
+(defn boolean [x]
+(if(x)
+true
+false))
+(boolean "foo")
+(if "foo" true false)
+(boolean "foo")
+(defn boolean [x]
+(if x
+true
+false))
+(boolean "foo")
