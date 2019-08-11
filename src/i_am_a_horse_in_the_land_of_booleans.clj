@@ -13,7 +13,11 @@
     false))
 
 (defn fizzbuzz [n]
-  ":(")
+  (cond
+    (divides? 15 n) "gotcha!"
+    (divides? 3 n) "fizz"
+    (divides? 5 n) "buzz"
+    :else ""))
 
 (defn teen? [age]
   (<= 13 age 19))
