@@ -1,0 +1,60 @@
+(true? nil)
+(false? "fasd")
+(if true? true false)
+(defn abs [x]
+  (if (> x 0) x (* -1 x)))
+(abs -12)
+(abs 12)
+(abs -1231)
+(> 20 56 19)
+(> 20 19 13)
+(> 20 14 13)
+(> 20 13 13)
+(> 20 13 12)
+(> 20 17 12)
+(mod 190 19)
+neg?
+(doc neg?)
+(defn leap-year? [year]
+  (if (divides? 4 year) 
+    (if (and (divides? 100 year)
+             (divides? 400 year)) true false) false))
+(defn divides? [divisor n]
+  (zero? (mod n divisor)))
+(defn leap-year? [year]
+  (if (divides? 4 year) 
+    (if (and (divides? 100 year)
+             (divides? 400 year)) true false) false))
+(leap-year? 200)
+(def years [100 200 400 12 20 15])
+(filter leap-year? years)
+(defn leap-year? [year]
+  (if (divides? 4 year) 
+    (if (divides? 100 year) 
+      (divides? 400 year)) false))
+(def years [100 200 400 12 20 15])
+(filter leap-year? years)
+(defn leap-year? [year]
+  (if (divides? 4 year) 
+    (if (divides? 100 year) 
+      (divides? 400 year) true) false))
+(filter leap-year? years)
+(defn boolean [x]
+  (if true? true false))
+(boolean "foo")
+(boolean nil)
+(true? nil)
+(defn boolean2 [x]
+  (if (true? x) true false))
+(boolean2 "foo")
+(true? "foo")
+(source boolean)
+(defn boolean2 [x]
+  (if x true false))
+(boolean2 "foo")
+(defn generic-doublificate [x]
+  (if (number? x) true
+    (if (empty? x) nil
+      (if (or (list? x) (vector? x))
+        (* 2 (count x)) true))))
+(generic-doublificate 1)
