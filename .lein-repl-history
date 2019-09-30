@@ -1,0 +1,6 @@
+(use 'i-am-a-horse-in-the-land-of-booleans)
+(teen? 19)
+(teen? 20)
+(teen? 12)
+(teen? 14)
+(/ 1 0)
