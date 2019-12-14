@@ -1,0 +1,86 @@
+(defn teen? [age]
+  (> 13 age 19 ) ) 
+(teen? 12)
+(teen? 13)
+  (>= 13 age 19 ) ) 
+(defn teen? [age]
+  (>= 13 age 19 ) ) 
+(teen? 12)
+(teen? 13)
+(defn teen? [age]
+  (<= 13 age 19 ) )
+(teen? 13)
+(teen? 12)
+quit
+( * x -1) 
+( * 2 -1) 
+( * -1 -1) 
+quit
+(defn fizzbuzz [n]
+    (cond 
+        (divides? 3 n ) "fizz"
+        (divides? 5 n ) "buzz"
+        (divides? 15 n) "gotcha!"
+        :else ""
+       )) 
+(defn divides? [divisor n]
+   (=(mod n divisor)0))
+(defn fizzbuzz [n]
+    (cond 
+        (divides? 3 n ) "fizz"
+        (divides? 5 n ) "buzz"
+        (divides? 15 n) "gotcha!"
+        :else ""
+       )) 
+(fizzbuzz 2)
+(fizzbuzz 45)
+(defn fizzbuzz [n]
+    (cond 
+        (divides? 15 n ) "fizz"
+        (divides? 5 n ) "buzz"
+        (divides? 3 n) "gotcha!"
+        :else ""
+       )) 
+(fizzbuzz 2)
+(fizzbuzz 45)
+(defn fizzbuzz [n]
+    (cond 
+        (divides? 15 n ) "gotcha!"
+        (divides? 5 n ) "buzz"
+        (divides? 3 n) "fizz"
+        :else ""
+       )) 
+(fizzbuzz 2)
+(fizzbuzz 45)
+(fizzbuzz 48)
+(fizzbuzz 70) 
+quit
+(defn leap-year? [year]
+  (cond 
+      (not (divides? year 4)) "niet deelbaar door 4 "
+      (not (divides? year 100)) "niet deelbaar door 100"
+      (not (divides? year 400)) "niet deelbaar door 400"
+      :else "deelbaar" ))
+(defn divides? [divisor n]
+   (=(mod n divisor)0))
+(defn leap-year? [year]
+  (cond 
+      (not (divides? year 4)) "niet deelbaar door 4 "
+      (not (divides? year 100)) "niet deelbaar door 100"
+      (not (divides? year 400)) "niet deelbaar door 400"
+      :else "deelbaar" ))
+(leap-year? 400)
+(divides 400 4) 
+(divides? 400 4) 
+( mod 400 4) 
+(= mod 400 4) 0)
+( = (mod 400 4)0)
+(divides? 400 4) 
+(defn leap-year? [year]
+  (cond 
+      (not (divides? 4 year)) "niet deelbaar door 4 "
+      (not (divides? 100 year )) "niet deelbaar door 100"
+      (not (divides? 400 year)) "niet deelbaar door 400"
+      :else "deelbaar" ))
+(leap-year? 400)
+quit
