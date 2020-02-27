@@ -1,0 +1,67 @@
+true nil
+true? nil
+(true? nil9
+(true? nil)
+(true? [])
+(defn boolean [x]
+  (true? x)
+boolean
+(defn bolean [x]
+true)
+boolean
+true? nil
+(true? nil)
+(boolean "foo")
+(boolean nil)
+(true? nil)
+(true? "food"
+)
+(if "foo" true false)
+(if nil true false)
+(>= 10 13)
+(>= 19 13)
+(>= 19 13)? (<= 19 19)
+(defn generic-doublificate [x]
+  (cond
+    (number? x) (* x 2)
+    (empty? x) nil
+    (list? x) (* (count xt) 2)
+    (vector? x) (* (count x) 2)
+    :else true
+    ))
+(defn generic-doublificate [x]
+  (cond
+    (number? x) (* x 2)
+    (empty? x) nil
+    (list? x) (* (count xt) 2)
+    (vector? x) (* (count x) 2)
+    :else true
+    ))
+number?
+(number? "")
+(number? 2)
+(defn generic-doublificate [x]
+  (cond
+    (number? x) (* x 2)
+    (empty? x) nil
+    (list? x) (* (count xt) 2)
+    (vector? x) (* (count x) 2)
+    :else true
+    ))
+(defn leap-year? [year]
+  (if (= (mod year 4) 0)
+    (if (= (mod year 100) 0)
+      (if (= (mod year 400) 0)
+        true
+        false
+      true
+      ))))
+(defn leap-year? [year]
+  (if (= (mod year 4) 0)
+    (if (= (mod year 100) 0)
+      (if (= (mod year 400) 0)
+        true
+        false
+      true
+    false
+  ))))
