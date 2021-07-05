@@ -1,0 +1,5 @@
+(boolean "foo")
+(defn boolean [x] (if (= x false) false (if (= x nil) false true)))
+(boolean foo)
+(boolean "foo")
+exit
