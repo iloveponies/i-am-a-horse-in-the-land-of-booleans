@@ -1,0 +1,136 @@
+(defn generic-doublificate [x]
+  (cond
+    (number? x) (* 2 x))
+  )
+(generic-doublificate 2)
+(defn generic-doublificate [x]
+  (cond
+    (number? x) (* 2 x)
+    (empty? x) nil
+    (or (list? x) (vector? x)) (* 2 x)
+    )
+  )
+(generic-doublificate 2)
+(generic-doublificate )
+(generic-doublificate "")
+(generic-doublificate [2 4])
+(defn generic-doublificate [x]
+  (cond
+    (number? x) (* 2 x)
+    (empty? x) nil
+    (or (list? x) (vector? x)) (count x)
+    )
+  )
+(generic-doublificate [2 4])
+(generic-doublificate [2 4 9])
+(defn generic-doublificate [x]
+  (cond
+    (number? x) (* 2 x)
+    (empty? x) nil
+    (or (list? x) (vector? x)) (count x)
+    :else true)
+  )
+(generic-doublificate [2 3 4 34 12])
+(generic-doublificate {a: 23, b: 23})
+(generic-doublificate {: a 23})
+(generic-doublificate {:a 23})
+(generic-doublificate {})
+(generic-doublificate [])
+(generic-doublificate "moi")
+(generic-doublificate '(65 21))
+(generic-doublificate '(65 21 34))
+(defn teen? [age]
+  (<= 13 age 19))
+(defn not-teen? [age]
+  (not teen? age))
+(not-teen? vittu)
+(not-teen? "vittu")
+(not-teen? 34)
+(defn teen? [age]
+  (<= 13 age 19))
+(defn not-teen? [age]
+  (not (teen? age))
+       )
+(not-teen? 23)
+(not-teen? 99)
+(not-teen? 14)
+(not-teen? 14)(defn leap-year? [year]
+  (cond
+    (and (divides? 100 n) (divides? 400 n)) true
+    (divides? 4) true
+    :else false)
+  )(defn leap-year? [year]
+  (cond
+    (and (divides? 100 n) (divides? 400 n)) true
+    (divides? 4) true
+    :else false)
+  )
+(defn leap-year? [year]
+  (cond
+    (and (divides? 100 year) (divides? 400 year)) true
+    (divides? 4 year) true
+    :else false)
+  )
+(defn leap-year? [year]
+  (and (divides? 100 year) (divides? 400 year)) true
+  (divides? 4 year) true
+  :else false
+  )
+(defn leap-year? [year]
+  (if (or (and (divides? 100 year) (divides? 400 year)) (divides? 4 year))
+  true
+  false))
+(defn leap-year? [year]
+  (cond
+    (divides? 100 year) true
+    :else false))
+(defn divides? [divisor n]
+  (if (== (mod n divisor) 0)
+    true
+    false))
+(defn leap-year? [year]
+  (cond
+    (divides? 100 year) true
+    :else false))
+(divides? 100)
+(leap-year? 100)
+(defn leap-year? [year]
+  (cond
+    (or 
+      (and (divides? 100 year) (divides? 400 year))
+      (divides? 4 year)) true
+    :else false))
+(leap-year? 1999)
+(leap-year? 2000)
+(leap-year? 2001)
+(leap-year? 2002)
+(defn fizzbuzz [n]
+  (cond
+    (divides? 3 n) "fizz"
+    (divides? 15 n) "gotcha!"
+    (and (divides? 5 n) (not (divides? 15 n))) "buzz"
+    :else ""))
+(fizzbuzz 45)
+(defn fizzbuzz [n]
+  (cond
+    (and (divides? 3 n) (not (divides? 15))) "fizz"
+    (divides? 15 n) "gotcha!"
+    (and (divides? 5 n) (not (divides? 15 n))) "buzz"
+    :else ""))
+(fizzbuzz 45)
+(defn fizzbuzz [n]
+  (cond
+    (and (divides? 3 n) (not (divides? 15 n))) "fizz"
+    (divides? 15 n) "gotcha!"
+    (and (divides? 5 n) (not (divides? 15 n))) "buzz"
+    :else ""))
+(fizzbuzz 45)
+(defn leap-year? [year]
+  (cond
+    (and (divides? 4 year) (or (not (divides? 100 year)) (divides? 400 year))) true
+    :else false))
+(leap-year? 2200)
+(leap-year? 2000)
+(leap-year? 200)
+(leap-year? 100)
+(leap-year? 2200)
