@@ -1,0 +1,18 @@
+String sign(int x) {
+    if (x < 0)
+        return "-";
+    else
+        return "+";
+(defn
+sign
+[x]
+exit
+(defn
+sign
+[x]
+(if (< x 0)
+"-"
+"+"))
+(sign 3)
+(sign -3)
+exit
