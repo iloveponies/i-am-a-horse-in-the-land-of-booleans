@@ -40,4 +40,12 @@
     (and (divides? 4 year) (divides? 100 year) (divides? 400 year)) true
     :else false))
 
+; '_______ good suggestion to leap function. reference:https://github.com/iloveponies/i-am-a-horse-in-the-land-of-booleans/pull/1635/files#diff-da781cd1b0ea7665718303864d05bcfae519b903d4b057d06dc869b9a9416cbaR55'
+;(defn leap-year? [year]
+;  (cond
+;    (not(divides? 4 year)) false
+;    (not(divides? 100 year)) true
+;    (not(divides? 400 year)) false
+;    :else true
+;    ))
 ; '_______'
