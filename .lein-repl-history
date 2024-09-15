@@ -1,0 +1,78 @@
+defn bln [x] (if x (true) (false))
+defn bln [x] (if (x) (true) (false))
+defn bln [x] (if (x) ("true") ("false"))
+(defn bln [x] (if (x) ("true") ("false")))
+(bln 4)
+(bln false)
+(if "foo" "truthy" "falsey")
+(fn [x] (if x "truthy" "falsey") 4)
+(defn bln [x] (if x "truthy" "falsey") )
+(bln 4)
+(bln nil)
+(bln false)
+(defn bln [x] (if x "truey" "false") )
+(bln 8)
+(defn bln [x] (if x "true" "false") )
+(defn boolean [x]
+  (if x
+    "true"
+    "false")
+)
+(boolean false)
+(boolean true)
+(boolean nil)
+(boolean 7)
+(boolean "gg5")
+exit
+(defn abs [x]
+  (if (< 0 x)
+    (* -1 x)
+    x))
+(abs 1)
+(abs -1)
+(abs 7)
+(< 0 9)
+(< 9 0)
+(< -5 0)
+(< 7 8)
+(< 0 8)
+(< 0 -8)
+(+ (-8) 7)
+(- 7 1)
+(- 7 8)
+(< (- 7 8) 0)
+(defn abs [x]
+  (if (< x 0)
+    (* -1 x)
+    x))
+(abs 9)
+(abs (- 9 10))
+(abs (- 9 20))
+   (defn divides? [divisor n]
+  (mod n divisor))
+(divides? 5 10)
+(divides? 5 40)
+(divides? 5 41)
+(defn divides? [divisor n]
+  (= (mod n divisor) 0)
+)
+(defn divides? [divisor n]
+  (= (mod n divisor) 0))
+(divides? 5 10)
+(divides? 5 13)
+(divides? 3 6)
+(defn divides? [divisor n]
+  (= (mod n divisor) 0))
+(defn fizzbuzz [n]
+  (cond
+    (divides? 15 n) "gotcha"
+    (divides? 3 n) "fizz"
+    (divides? 5 n) "buzz"
+    :else ""
+    ))
+(fizzbuzz 15)
+(fizzbuzz 1)
+(fizzbuzz 3)
+(fizzbuzz 6)
+(fizzbuzz 5)
+(fizzbuzz 15)
