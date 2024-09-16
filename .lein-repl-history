@@ -1,0 +1,21 @@
+(boolean false)
+(boolean df)
+(boolean "df")
+quit
+(boolean 2)
+(boolean nil)
+(ns i-am-a-horse-in-the-land-of-booleans
+  (:refer-clojure :exclude [boolean]))
+(boolean 2)
+quit
+(teen? 3)
+(use 'i-am-a-horse-in-the-land-of-booleans)
+(boolean 2)
+(boolean nil)
+(teen 2)
+(teen? 2)
+(use 'i-am-a-horse-in-the-land-of-booleans)
+(teen? 2)
+(use 'i-am-a-horse-in-the-land-of-booleans)
+(abs -2)
+quit
