@@ -1,0 +1,5 @@
+(defn booli [x]
+(if x true false))
+(booli nil)
+exity
+exit
